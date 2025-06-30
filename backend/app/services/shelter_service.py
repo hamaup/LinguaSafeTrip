@@ -91,9 +91,16 @@ class ShelterService:
     async def _fetch_government_shelters(self, location: Location, radius_km: float) -> List[Shelter]:
         """Fetch shelter data from government APIs."""
         try:
-            # Use GSI GeoJSON data for nationwide coverage
+            # Use GSI GeoJSON data with location
             async with GovernmentAPIIntegrator() as integrator:
-                shelter_data_list = await integrator.fetch_shelter_data("nationwide")
+                # Pass location to GSI client
+                from ..collectors.gsi_shelter_client import GSIShelterClient
+                
+                async with GSIShelterClient() as gsi_client:
+                    shelter_data_list = await gsi_client.fetch_shelter_csv_data(
+                        prefecture=None,
+                        location=(location.latitude, location.longitude)
+                    )
                 
                 # Filter shelters within radius
                 nearby_shelters = []

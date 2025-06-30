@@ -77,3 +77,65 @@ def get_location_string(location) -> str:
         return f"{lat:.4f},{lon:.4f}"
     else:
         return str(location)
+
+def lon2tile(lon: float, zoom: int) -> int:
+    """Convert longitude to tile X coordinate.
+    
+    Args:
+        lon: Longitude in degrees
+        zoom: Zoom level
+        
+    Returns:
+        Tile X coordinate
+    """
+    return int((lon + 180.0) / 360.0 * (2 ** zoom))
+
+def lat2tile(lat: float, zoom: int) -> int:
+    """Convert latitude to tile Y coordinate.
+    
+    Args:
+        lat: Latitude in degrees
+        zoom: Zoom level
+        
+    Returns:
+        Tile Y coordinate
+    """
+    lat_rad = math.radians(lat)
+    return int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * (2 ** zoom))
+
+def get_tile_coordinates(lat: float, lon: float, zoom: int) -> Tuple[int, int, int]:
+    """Get tile coordinates for a given latitude, longitude, and zoom level.
+    
+    Args:
+        lat: Latitude in degrees
+        lon: Longitude in degrees
+        zoom: Zoom level
+        
+    Returns:
+        Tuple of (zoom, x, y) tile coordinates
+    """
+    x = lon2tile(lon, zoom)
+    y = lat2tile(lat, zoom)
+    return (zoom, x, y)
+
+def get_surrounding_tiles(lat: float, lon: float, zoom: int, radius: int = 1) -> list[Tuple[int, int, int]]:
+    """Get surrounding tiles for a given location.
+    
+    Args:
+        lat: Latitude in degrees
+        lon: Longitude in degrees
+        zoom: Zoom level
+        radius: Number of tiles to include in each direction (default 1)
+        
+    Returns:
+        List of (zoom, x, y) tile coordinates including center and surrounding tiles
+    """
+    center_x = lon2tile(lon, zoom)
+    center_y = lat2tile(lat, zoom)
+    
+    tiles = []
+    for dx in range(-radius, radius + 1):
+        for dy in range(-radius, radius + 1):
+            tiles.append((zoom, center_x + dx, center_y + dy))
+    
+    return tiles

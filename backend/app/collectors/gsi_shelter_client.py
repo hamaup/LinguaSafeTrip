@@ -7,13 +7,14 @@ import asyncio
 import csv
 import io
 import logging
-from typing import List, Dict, Optional, Union
+from typing import List, Dict, Optional, Union, Tuple
 from datetime import datetime, timezone, timedelta
 import httpx
 from urllib.parse import urljoin
 
 from app.schemas.shelter import ShelterBase, GeoPoint
 from app.db.firestore_client import get_db
+from app.utils.geo_utils import get_surrounding_tiles
 
 logger = logging.getLogger(__name__)
 
@@ -59,19 +60,26 @@ class GSIShelterClient:
         if self.http_client:
             await self.http_client.aclose()
     
-    async def fetch_shelter_csv_data(self, prefecture: Optional[str] = None) -> List[ShelterBase]:
+    async def fetch_shelter_csv_data(self, prefecture: Optional[str] = None,
+                                   location: Optional[Tuple[float, float]] = None) -> List[ShelterBase]:
         """
         GSI避難所CSVデータを取得
         
         Args:
             prefecture: 都道府県名（Noneの場合は全国データ）
+            location: (latitude, longitude) タプル（オプション）
             
         Returns:
             避難所データのリスト
         """
         try:
-            # キャッシュをチェック
-            cache_key = f"gsi_shelters_{prefecture or 'nationwide'}"
+            # キャッシュキーを生成（位置情報も考慮）
+            if location:
+                lat, lon = location
+                cache_key = f"gsi_shelters_{lat:.4f}_{lon:.4f}"
+            else:
+                cache_key = f"gsi_shelters_{prefecture or 'nationwide'}"
+                
             cached_data = await self._get_cached_data(cache_key)
             if cached_data:
                 logger.info(f"Using cached GSI shelter data: {len(cached_data)} shelters")
@@ -79,7 +87,7 @@ class GSIShelterClient:
             
             # 実際のCSVダウンロード（本来はhinanmapサイト経由）
             # 開発環境では模擬データを使用
-            shelter_data = await self._download_csv_data(prefecture)
+            shelter_data = await self._download_csv_data(prefecture, location)
             
             if shelter_data:
                 # キャッシュに保存（30日TTL）
@@ -92,98 +100,143 @@ class GSIShelterClient:
             logger.error(f"Error fetching GSI shelter data: {e}")
             return []
     
-    async def _download_csv_data(self, prefecture: Optional[str] = None) -> List[ShelterBase]:
+    async def _download_csv_data(self, prefecture: Optional[str] = None, 
+                               location: Optional[Tuple[float, float]] = None) -> List[ShelterBase]:
         """
         GSI避難所データの実際のダウンロード（ベクトルタイルAPI経由）
+        
+        Args:
+            prefecture: 都道府県名（オプション）
+            location: (latitude, longitude) タプル（オプション）
         """
         try:
             # GSIベクトルタイルAPIを使用して実際のデータを取得
             logger.info("Fetching real GSI shelter data from vector tile API")
             
-            # 東京エリアのタイルから避難所データを取得
-            shelters = await self._fetch_from_vector_tiles()
+            # 位置情報に基づいてタイルから避難所データを取得
+            shelters = await self._fetch_from_vector_tiles(location)
             
             if shelters and len(shelters) > 0:
                 logger.info(f"Successfully fetched {len(shelters)} shelters from GSI vector tiles")
                 return shelters
             else:
-                logger.warning("No data from vector tiles, using fallback data")
-                return self._generate_realistic_shelter_data(prefecture)
+                logger.warning("No data from vector tiles")
+                return []
             
         except Exception as e:
             logger.error(f"Error fetching GSI vector tile data: {e}")
-            return self._generate_realistic_shelter_data(prefecture)
+            return []
     
     def _generate_realistic_shelter_data(self, prefecture: Optional[str] = None) -> List[ShelterBase]:
         """
-        実際のGSI形式に近い模擬データを生成
+        実際のGSI形式に近い模擬データを生成（地域に応じたデータを返す）
         実際の実装時は削除予定
         """
         shelters = []
         
-        # 東京23区の実際の避難所データに基づく模擬データ
-        realistic_shelters = [
-            {
-                "name": "千代田区立麹町小学校",
-                "address": "東京都千代田区麹町2-8",
-                "lat": 35.6809, "lon": 139.7373,
-                "disaster_types": ["flood", "earthquake", "fire"]
-            },
-            {
-                "name": "皇居東御苑",
-                "address": "東京都千代田区千代田1-1",
-                "lat": 35.6851, "lon": 139.7594,
-                "disaster_types": ["earthquake", "fire", "tsunami"]
-            },
-            {
-                "name": "新宿中央公園",
-                "address": "東京都新宿区西新宿2-11",
-                "lat": 35.6938, "lon": 139.6918,
-                "disaster_types": ["earthquake", "fire", "flood"]
-            },
-            {
-                "name": "上野恩賜公園",
-                "address": "東京都台東区上野公園5-20",
-                "lat": 35.7148, "lon": 139.7742,
-                "disaster_types": ["earthquake", "fire"]
-            },
-            {
-                "name": "代々木公園",
-                "address": "東京都渋谷区代々木神園町2-1",
-                "lat": 35.6732, "lon": 139.6947,
-                "disaster_types": ["earthquake", "fire", "flood"]
-            },
-            {
-                "name": "お台場海浜公園",
-                "address": "東京都港区台場1-4",
-                "lat": 35.6292, "lon": 139.7731,
-                "disaster_types": ["tsunami", "earthquake"]
-            },
-            {
-                "name": "隅田公園",
-                "address": "東京都台東区花川戸1-1",
-                "lat": 35.7103, "lon": 139.8011,
-                "disaster_types": ["earthquake", "fire", "flood"]
-            },
-            {
-                "name": "芝公園",
-                "address": "東京都港区芝公園4-10-17",
-                "lat": 35.6578, "lon": 139.7495,
-                "disaster_types": ["earthquake", "fire"]
-            },
-            {
-                "name": "井の頭恩賜公園",
-                "address": "東京都武蔵野市御殿山1-18-31",
-                "lat": 35.7004, "lon": 139.5703,
-                "disaster_types": ["earthquake", "fire"]
-            },
-            {
-                "name": "水元公園",
-                "address": "東京都葛飾区水元公園3-2",
-                "lat": 35.7850, "lon": 139.8644,
-                "disaster_types": ["earthquake", "flood"]
-            }
-        ]
+        # 都道府県名から地域を判定
+        if prefecture and "大阪" in prefecture:
+            # 大阪の避難所データ
+            realistic_shelters = [
+                {
+                    "name": "大阪市立梅田小学校",
+                    "address": "大阪府大阪市北区梅田1-1-1",
+                    "lat": 34.7025, "lon": 135.4950,
+                    "disaster_types": ["flood", "earthquake", "fire"]
+                },
+                {
+                    "name": "大阪市北区民センター",
+                    "address": "大阪府大阪市北区扇町2-1-27",
+                    "lat": 34.7070, "lon": 135.5087,
+                    "disaster_types": ["earthquake", "fire", "flood"]
+                },
+                {
+                    "name": "大阪城公園",
+                    "address": "大阪府大阪市中央区大阪城1-1",
+                    "lat": 34.6873, "lon": 135.5262,
+                    "disaster_types": ["earthquake", "fire"]
+                },
+                {
+                    "name": "中之島公園",
+                    "address": "大阪府大阪市北区中之島1",
+                    "lat": 34.6932, "lon": 135.5068,
+                    "disaster_types": ["earthquake", "fire", "flood"]
+                },
+                {
+                    "name": "靱公園",
+                    "address": "大阪府大阪市西区靱本町1-9",
+                    "lat": 34.6833, "lon": 135.4917,
+                    "disaster_types": ["earthquake", "fire"]
+                }
+            ]
+        elif prefecture and ("神奈川" in prefecture or "横浜" in prefecture):
+            # 横浜の避難所データ
+            realistic_shelters = [
+                {
+                    "name": "横浜市立西区総合庁舎",
+                    "address": "神奈川県横浜市西区高島2-1-1",
+                    "lat": 35.4658, "lon": 139.6250,
+                    "disaster_types": ["flood", "earthquake", "fire"]
+                },
+                {
+                    "name": "横浜市西区スポーツセンター",
+                    "address": "神奈川県横浜市西区浅間町4-340-1",
+                    "lat": 35.4750, "lon": 139.6180,
+                    "disaster_types": ["earthquake", "fire", "flood"]
+                },
+                {
+                    "name": "みなとみらい臨港パーク",
+                    "address": "神奈川県横浜市西区みなとみらい1-1",
+                    "lat": 35.4560, "lon": 139.6350,
+                    "disaster_types": ["earthquake", "tsunami"]
+                },
+                {
+                    "name": "山下公園",
+                    "address": "神奈川県横浜市中区山下町279",
+                    "lat": 35.4459, "lon": 139.6503,
+                    "disaster_types": ["earthquake", "tsunami", "fire"]
+                },
+                {
+                    "name": "横浜公園",
+                    "address": "神奈川県横浜市中区横浜公園",
+                    "lat": 35.4487, "lon": 139.6408,
+                    "disaster_types": ["earthquake", "fire"]
+                }
+            ]
+        else:
+            # 東京23区の実際の避難所データに基づく模擬データ（デフォルト）
+            realistic_shelters = [
+                {
+                    "name": "千代田区立麹町小学校",
+                    "address": "東京都千代田区麹町2-8",
+                    "lat": 35.6809, "lon": 139.7373,
+                    "disaster_types": ["flood", "earthquake", "fire"]
+                },
+                {
+                    "name": "皇居東御苑",
+                    "address": "東京都千代田区千代田1-1",
+                    "lat": 35.6851, "lon": 139.7594,
+                    "disaster_types": ["earthquake", "fire", "tsunami"]
+                },
+                {
+                    "name": "新宿中央公園",
+                    "address": "東京都新宿区西新宿2-11",
+                    "lat": 35.6938, "lon": 139.6918,
+                    "disaster_types": ["earthquake", "fire", "flood"]
+                },
+                {
+                    "name": "上野恩賜公園",
+                    "address": "東京都台東区上野公園5-20",
+                    "lat": 35.7148, "lon": 139.7742,
+                    "disaster_types": ["earthquake", "fire"]
+                },
+                {
+                    "name": "代々木公園",
+                    "address": "東京都渋谷区代々木神園町2-1",
+                    "lat": 35.6732, "lon": 139.6947,
+                    "disaster_types": ["earthquake", "fire", "flood"]
+                }
+            ]
         
         for i, shelter_data in enumerate(realistic_shelters):
             shelter = ShelterBase(
@@ -201,7 +254,7 @@ class GSIShelterClient:
             )
             shelters.append(shelter)
         
-        logger.info(f"Generated {len(shelters)} realistic shelter mock data")
+        logger.info(f"Generated {len(shelters)} realistic shelter mock data for {prefecture or 'default'}")
         return shelters
     
     def _generate_verified_shelter_data_from_gsi(self) -> List[ShelterBase]:
@@ -305,24 +358,28 @@ class GSIShelterClient:
         logger.info(f"Generated {len(shelters)} verified GSI shelter records")
         return shelters
     
-    async def _fetch_from_vector_tiles(self) -> List[ShelterBase]:
+    async def _fetch_from_vector_tiles(self, location: Optional[Tuple[float, float]] = None) -> List[ShelterBase]:
         """
         GSIベクトルタイルAPIから実際の避難所データを取得
+        
+        Args:
+            location: (latitude, longitude) タプル。指定されない場合は東京駅エリアを使用
         """
         shelters = []
         
         try:
-            # 東京エリアのタイル座標を計算（複数タイルを取得）
-            tokyo_tiles = [
-                (10, 909, 403),   # 東京駅エリア
-                (10, 908, 403),   # 西側
-                (10, 910, 403),   # 東側
-                (10, 909, 402),   # 北側
-                (10, 909, 404),   # 南側
-            ]
+            # 位置情報に基づいてタイル座標を計算
+            if location:
+                lat, lon = location
+                tiles = get_surrounding_tiles(lat, lon, zoom=10, radius=1)
+                logger.info(f"Fetching tiles for location ({lat:.6f}, {lon:.6f})")
+            else:
+                # デフォルト: 東京駅エリア
+                tiles = get_surrounding_tiles(35.6812, 139.7671, zoom=10, radius=1)
+                logger.info("Fetching tiles for default location (Tokyo Station)")
             
             # 洪水対応避難所データ（skhb01）を取得
-            for zoom, x, y in tokyo_tiles:
+            for zoom, x, y in tiles:
                 tile_url = f"https://cyberjapandata.gsi.go.jp/xyz/skhb01/{zoom}/{x}/{y}.geojson"
                 
                 try:

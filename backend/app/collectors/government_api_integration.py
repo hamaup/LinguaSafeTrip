@@ -16,7 +16,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from enum import Enum
-from typing import Dict, List, Optional, Union, Any
+from typing import Dict, List, Optional, Union, Any, Tuple
 import asyncio
 import logging
 import zipfile
@@ -553,7 +553,7 @@ class GovernmentAPIIntegrator:
         if self.http_client:
             await self.http_client.close()
     
-    async def fetch_shelter_data(self, region: str = "nationwide") -> List[ShelterData]:
+    async def fetch_shelter_data(self, region: str = "nationwide", location: Optional[Tuple[float, float]] = None) -> List[ShelterData]:
         """Fetch shelter data from GSI CSV source"""
         try:
             # Use dedicated GSI shelter CSV client
@@ -561,7 +561,8 @@ class GovernmentAPIIntegrator:
             
             async with GSIShelterClient() as gsi_client:
                 shelter_data_list = await gsi_client.fetch_shelter_csv_data(
-                    prefecture=None if region == "nationwide" else region
+                    prefecture=None if region == "nationwide" else region,
+                    location=location
                 )
                 
                 # Convert ShelterBase to ShelterData (they are aliases)
