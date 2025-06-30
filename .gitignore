@@ -1,0 +1,573 @@
+# .gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PEP 582; __pypackages__
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static analysis results
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# VS Code settings specific to workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.claude/
+LinguaSafeTrip/.ruby-lsp
+
+# Node.js / React / Next.js
+node_modules/
+.next/
+build/
+dist/
+out/
+scripts/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Environment variables
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+.firebase-debug.log
+.firestore-debug.log
+backend/tests/
+backend/mocks/
+backend/.env
+backend/.venv
+
+# ビルド成果物 (例)
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/.firebase/
+!frontend/lib/
+
+mcp-flutter-ss/
+mcp_flutter/
+
+cline_mcp_settings.json
+.coverage
+
+old/
+old/frontend
+tools/dev_ui/.files
+
+backend/guide/
+backend/vector_db/
+
+safetybee0424-0d17a512a37e.json
+
+# Backend specific
+backend/.env*
+backend/server.log
+backend/fastapi_debug.log
+backend/firebase-debug.log
+backend/firestore-debug.log
+backend/vector_db_simple/
+backend/vector_db_faiss/
+backend/app/mock_data/*_cache.json
+backend/app/mock_data/web_news_cache/
+backend/tests/manual/
+*.pkl
+*.npy
+
+# Frontend specific
+frontend/flutter_*.log
+frontend/.claude/
+frontend/ios/Podfile.lock
+frontend/android/.gradle/
+frontend/android/app/*.keystore
+frontend/android/app/key.properties
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+
+# Flutter generated files
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+
+# iOS specific
+frontend/ios/Pods/
+frontend/ios/Runner.xcworkspace/
+frontend/ios/.symlinks/
+frontend/ios/Flutter/flutter_export_environment.sh
+
+# Android specific
+frontend/android/.gradle/
+frontend/android/app/build/
+frontend/android/build/
+frontend/android/gradle/
+frontend/android/gradlew
+frontend/android/gradlew.bat
+frontend/android/local.properties
+frontend/android/key.properties
+frontend/android/app/*.jks
+
+# macOS specific
+frontend/macos/Flutter/
+frontend/macos/Pods/
+
+# Testing and debugging
+backend/assert
+backend/cleanup_report.json
+backend/emergency_test.json
+*debug*.log
+*error*.log
+backend/CLAUDE.md
+
+# Additional patterns to prevent sensitive files
+# Google Services and Firebase config files
+**/google-services.json
+**/GoogleService-Info.plist
+backend/safetybee0424-*.json
+backend/vertex-search-poc-key.json
+
+# Additional lock files and package management
+pubspec.lock
+Podfile.lock
+
+# Development and testing documentation
+**/DEBUG_*.md
+**/UIUX_*.md
+**/test_*.md
+**/test_*.py
+**/*_specification.md
+
+# LangGraph state files
+**/.langgraph_api/
+*.pckl
+
+# Development screenshots and images
+flutter_*.png
+screenshot_*.png
+
+# Generated Dart files (already covered but ensuring completeness)
+**/*.freezed.dart
+**/*.g.dart
+**/*.mocks.dart
+
+# Additional cache and temporary files
+**/.metadata
+**/devtools_options.yaml
+
+# Firebase debug logs in root
+firebase-debug.log
+firestore-debug.log
+pubsub-debug.log
+
+# Node modules and package files in root
+node_modules/
+package-lock.json
+
+# Cache directories
+cache/
+
+# Graph visualizations
+graph_visualizations/
+
+# Python cache and test files
+pytest.ini
+requirements.txt
+
+# Claude MCP settings
+cline_mcp_settings.json
+
+# Scripts directory (contains various automation scripts)
+scripts/
+
+# Tools directory (development tools)
+tools/
+
+# Backend specific test results and reports
+backend/comprehensive_test_report_*.json
+backend/continuous_conversation_test_results_*.json
+backend/simple_test_results_*.json
+backend/intent_classification_*.json
+backend/intent_classification_*.md
+backend/multilingual_intent_*.json
+backend/*_test_results_*.json
+backend/server.log
+backend/job.Dockerfile
+backend/cloud_functions/
+backend/vertex_ai_migration/
+backend/cleanup_*.sh
+backend/setup_*.sh
+backend/deploy.sh
+backend/cleanup_list.md
+backend/gitignore_additions.md
+backend/environment_*.md
+backend/node_language_test_results.json
+backend/extended_language_test_results.json
+backend/agent_processing_pattern_results.json
+backend/*.pkl
+backend/*.npy
+backend/Dockerfile.tmp
+backend/Dockerfile.light
+
+# Frontend specific
+frontend/android/local.properties
+frontend/ios/Flutter/flutter_export_environment.sh
+frontend/linux/flutter/ephemeral/
+frontend/macos/Flutter/ephemeral/
+frontend/windows/flutter/ephemeral/
+
+# Additional document files that might contain sensitive info
+Documents/*.docx
+Documents/*.pdf
+Documents/*.png
+
+# Ignore entire Documents directory
+Documents/
+
+# Backend documentation that should not be published
+backend/docs/
+backend/CLAUDE.md
+
+# Test runner files
+backend/comprehensive_test_runner.py
+backend/simple_test_runner.py
+backend/intent_classification_test_extended.py
+backend/multilingual_intent_classification_test.py
+backend/test_*.py
+backend/run_*.py
+
+# Emergency and debug files
+backend/emergency_*.py
+backend/shelter_cache_fix.py
+backend/debug_run.sh
+
+# Frontend build directories
+frontend/build/
+frontend/android/build/
+frontend/ios/build/
+frontend/linux/build/
+frontend/macos/build/
+frontend/windows/build/
+frontend/web/build/
+
+# IDE specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Flutter specific
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/.pub-cache/
+frontend/.pub/
+
+# Android specific
+frontend/android/.gradle/
+frontend/android/captures/
+frontend/android/.externalNativeBuild/
+frontend/android/.cxx/
+
+# iOS specific
+frontend/ios/Flutter/App.framework
+frontend/ios/Flutter/Flutter.framework
+frontend/ios/Flutter/Flutter.podspec
+frontend/ios/Flutter/Generated.xcconfig
+frontend/ios/Flutter/app.flx
+frontend/ios/Flutter/app.zip
+frontend/ios/Flutter/flutter_assets/
+frontend/ios/Flutter/flutter_export_environment.sh
+frontend/ios/ServiceDefinitions.json
+frontend/ios/Runner/GeneratedPluginRegistrant.*
+
+# macOS specific
+frontend/macos/Flutter/GeneratedPluginRegistrant.swift
+frontend/macos/Flutter/Flutter-Debug.xcconfig
+frontend/macos/Flutter/Flutter-Release.xcconfig
+
+# Backend test and debug scripts
+backend/scripts/dev/
+backend/scripts/test_*.py
+backend/scripts/verify_*.py
+backend/scripts/*.sh
+backend/diagnose_*.py
+
+# LangGraph database files
+backend/data/langgraph_checkpoints.*
+
+# Backend cache directories
+backend/cache/
+backend/app/mock_data/web_news_cache/
+
+# Temporary build files
+backend/cloudbuild-*.yaml
+backend/requirements-*.txt
+!backend/requirements.txt
+
+CLAUDE.md
+firebase.json
+package.json
+.firebaserc
+
+frontend/docs
+terraform/environments/production/main.tf
+terraform/environments/production/versions.tf
+terraform/modules/cloud-run/main.tf
+terraform/modules/cloud-run/outputs.tf
+terraform/modules/cloud-run/variables.tf
+terraform/environments/production/inframap_full.dot
+terraform/environments/production/inframap_output.dot
+frontend/web/firebase-messaging-sw.js
+frontend/.env.example
+frontend/test/
+backend/backup-safetybeacon-backend-staging-20250627-012440.yaml
+backend/pytest.ini
+backend/pyproject.toml
+backend/cloudbuild.yaml
+backend/backup-safetybeacon-backend-staging-20250626-230713.yaml
+backend/Dockerfile
+backend/firestore.indexes.json
+frontend/integration_test
+backend/backup-safetybeacon-backend-staging-20250628-051151.yaml
+backend/backup-safetybeacon-backend-staging-20250628-051703.yaml
+backend/backup-safetybeacon-backend-staging-20250628-052209.yaml
+
+# ============================================================================
+# LinguaSafeTrip Repository Upload Cleanup Patterns
+# ============================================================================
+# These patterns ensure clean repository upload by excluding development files
+
+# Development scripts and cleanup files
+cleanup_for_upload.sh
+cleanup_report.json
+cleanup_*.sh
+setup_*.sh
+
+# Voice recording functionality (temporarily disabled)
+frontend/lib/features/chat/providers/voice_input_provider.dart.disabled
+
+# Additional sensitive patterns not covered above
+**/*_cache.json
+**/web_news_cache/
+comprehensive_test_*.json
+continuous_conversation_test_results_*.json
+simple_test_results_*.json
+intent_classification_*.json
+*_test_results_*.json
+emergency_test.json
+
+# Example template files (will be created during cleanup)
+backend/.env.example
+frontend/.env.example
+frontend/android/app/google-services.json.example
+
+# Backup and temporary directories
+/tmp/safetybee_backup/
+backup-*/
+*.backup
+
+# Vector database files
+vector_db*/
+guide/
+vector_db_simple/
+vector_db_faiss/
+
+# Additional log patterns
+*debug*.log
+*error*.log
+server.log
+fastapi_debug.log
+
+# Development documentation
+DEBUG_*.md
+UIUX_*.md
+test_*.md
+*_specification.md
+
+# Test runner and debug files
+comprehensive_test_runner.py
+simple_test_runner.py
+intent_classification_test_extended.py
+multilingual_intent_classification_test.py
+emergency_*.py
+shelter_cache_fix.py
+debug_run.sh
+
+# LangGraph and ML model files
+.langgraph_api/
+*.pckl
+data/langgraph_checkpoints.*
+
+# Additional build artifacts
+cloudbuild-*.yaml
+requirements-*.txt
+!requirements.txt
+job.Dockerfile
+Dockerfile.tmp
+Dockerfile.light
+
+# Graph visualizations
+graph_visualizations/
+
+# Additional cache directories
+pytest.ini
+node_language_test_results.json
+extended_language_test_results.json
+agent_processing_pattern_results.json
+firestore.rules
+
+# CLAUDE.md files
+CLAUDE.md
+backend/CLAUDE.md
+backend/docs/CLAUDE.md
+frontend/test_driver/
+frontend/ios/Runner/Info.plist
+frontend/docs/GOOGLE_MAPS_TROUBLESHOOTING_GUIDE.md
+backend/deploy
+backend/docs
+backend/config
+
+backend/.dockerignore
+backend/.gcloudignore
+backend/README.md

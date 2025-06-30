@@ -1,0 +1,257 @@
+{
+  "@@locale": "ko",
+  "appName": "SafetyBee",
+  "permissionRequiredTitle": "권한이 필요합니다",
+  "permissionRequestSubtitle": "앱 기본 기능에 필요한 권한을 설정합니다",
+  "permissionLaterInfo": "이러한 권한은 안전 기능에 중요하지만 나중에 설정할 수도 있습니다.",
+  "locationPermissionTitle": "위치 권한",
+  "locationPermissionRationale": "이 앱은 근처 대피소와 위험 지역을 알려주기 위해 귀하의 위치를 사용합니다.",
+  "notificationPermissionTitle": "알림 권한",
+  "notificationPermissionRationale": "재해 경보와 중요한 업데이트에 대한 알림을 보내드립니다.",
+  "next": "다음",
+  "settings": "설정",
+  "language": "언어",
+  "selectLanguage": "언어 선택",
+  "cancel": "취소",
+  "ok": "확인",
+  "settingsLoadFailed": "설정을 불러오지 못했습니다. 다시 시도해주세요.",
+  "notificationSettings": "알림 설정",
+  "notificationSettingsDescription": "앱 알림 설정 변경",
+  "messageInputHint": "메시지 입력...",
+  "emergencyContacts": "비상 연락처",
+  "addEmergencyContact": "비상 연락처 추가",
+  "name": "이름",
+  "phoneNumber": "전화번호",
+  "save": "저장",
+  "registerEmergencyContact": "비상 연락처 등록",
+  "emergencyContactAdded": "비상 연락처가 추가되었습니다",
+  "pleaseEnterNameAndPhone": "이름과 전화번호를 입력해주세요",
+  "errorOccurred": "오류가 발생했습니다: {error}",
+  "tapForDetails": "자세히 보려면 탭하세요",
+  "welcome": "환영합니다",
+  "nickname": "닉네임",
+  "enterNickname": "닉네임을 입력해주세요",
+  "nicknameHint": "닉네임 입력...",
+  "emergencyContactSetup": "비상 연락처 설정",
+  "addContactPrompt": "안전을 위해 비상 연락처를 추가해주세요.",
+  "contactName": "연락처 이름",
+  "contactNameHint": "연락처 이름 입력...",
+  "contactPhone": "전화번호",
+  "contactPhoneHint": "전화번호 입력...",
+  "addContact": "연락처 추가",
+  "removeContact": "삭제",
+  "completeSetup": "설정 완료",
+  "skip": "건너뛰기",
+  "continueButton": "계속",
+  "finish": "완료",
+  "locationPermissionGranted": "위치 권한이 허용되었습니다",
+  "allowLocationPermission": "위치 권한 허용",
+  "notificationPermissionGranted": "알림 권한이 허용되었습니다",
+  "allowNotificationPermission": "알림 권한 허용",
+  "backToHome": "홈으로 돌아가기",
+  "notSet": "설정되지 않음",
+  "waitingForResponse": "응답 대기 중",
+  "tapToConfirm": "탭하여 확인",
+  "askQuestion": "질문하기",
+  "emergencyActionRequired": "⚠️ 긴급 조치가 필요합니다",
+  "evacuationInfo": "🚨 대피 정보",
+  "shelterInfo": "🏠 대피소 정보",
+  "emergencyAlert": "🚨 긴급 경보",
+  "safetyConfirmation": "✅ 안전 확인",
+  "hazardMapInfo": "🗺️ 위험 지도 정보",
+  "disasterLatestInfo": "📡 최신 재해 정보",
+  "disasterRelatedInfo": "🌀 재해 관련 정보",
+  "questionSent": "질문을 보냈습니다",
+  "notificationConfirmed": "알림을 확인했습니다",
+  "loading": "로딩 중...",
+  "timelineEmpty": "타임라인이 비어 있습니다",
+  "loadingTimeline": "타임라인 로딩 중...",
+  "gettingLatestInfo": "SafeBeee의 최신 정보를 가져오는 중",
+  "infoWillAppearSoon": "곧 정보가 표시됩니다. 잠시 기다려 주세요.",
+  "userNickname": "사용자 닉네임",
+  "emergencyContactsList": "비상 연락처 목록",
+  "noEmergencyContacts": "등록된 비상 연락처가 없습니다",
+  "contacts": "개",
+  "contact": "개",
+  "resetAppToInitialState": "앱을 초기 상태로 재설정",
+  "confirmation": "확인",
+  "resetConfirmationMessage": "모든 설정과 데이터가 삭제되고 초기 상태로 돌아갑니다. 확실하신가요?",
+  "reset": "재설정",
+  "editEmergencyContact": "비상 연락처 편집",
+  "deleteEmergencyContactConfirmation": "이 비상 연락처를 삭제하시겠습니까?",
+  "delete": "삭제",
+  "gpsEnabled": "GPS 활성화",
+  "gpsDisabled": "GPS 비활성화",
+  "mobile": "모바일",
+  "ethernet": "이더넷",
+  "offline": "오프라인",
+  "emergencySms": "긴급 SMS",
+  "sendToAllContacts": "전체 전송",
+  "selectIndividually": "개별 선택",
+  "smsSafetyMessage": "[SafeBeee] 저는 안전하며 안전한 장소에 있습니다.",
+  "smsTemplateRecommended": "[SafeBeee] 저는 안전합니다.",
+  "smsTemplateDetailed": "[SafeBeee] 저는 안전하며 안전한 장소에 있습니다. 걱정하지 마세요.",
+  "smsTemplateCheckIn": "[SafeBeee] 정기 연락입니다. 저는 잘 지내고 있습니다.",
+  "smsTemplateRecommendedWithLocation": "[SafeBeee] 저는 안전합니다. 현재 위치: {location}",
+  "@smsTemplateRecommendedWithLocation": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "smsAppOpened": "SMS 앱이 열렸습니다",
+  "smsSent": "SMS가 전송되었습니다",
+  "smsFailedToOpen": "SMS 앱을 열 수 없습니다",
+  "recipientCount": "{count}명",
+  "@recipientCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openHazardMap": "위험 지도 열기",
+  "externalSiteWarning": "외부 사이트가 열립니다",
+  "hazardMapUrl": "위험 지도 URL",
+  "openInBrowser": "브라우저에서 열기",
+  "close": "닫기",
+  "sendComplete": "전송 완료",
+  "smsPrepared": "SMS 준비 완료",
+  "copiedToClipboard": "클립보드에 복사됨",
+  "recipient": "수신자",
+  "message": "메시지",
+  "smsInstructions": "순서:",
+  "openSmsApp": "1. SMS 앱 열기",
+  "enterPhoneNumber": "2. 전화번호 입력 또는 선택",
+  "pasteAndSend": "3. 메시지 붙여넣기 후 전송",
+  "smsAppOpenedButton": "SMS 앱이 열렸습니다",
+  "smsAppOpenedMessage": "{name} ({phone})님께 SMS 앱을 열었습니다",
+  "@smsAppOpenedMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "smsSendInstructions": "SMS를 보낸 후 '전송 완료' 버튼을 눌러주세요",
+  "smsManualInstructions": "수동으로 SMS 보내는 방법:",
+  "smsCopyButtonInstruction": "1. '복사' 버튼으로 연락처와 메시지 복사",
+  "smsOpenAppInstruction": "2. SMS 앱을 수동으로 열기",
+  "smsPasteAndSendInstruction": "3. 전화번호와 메시지를 붙여넣고 전송",
+  "smsFailedToOpenApp": "SMS 앱을 자동으로 열 수 없습니다",
+  "errorDetails": "오류 세부사항:",
+  "sendTo": "보낼 곳:",
+  "messageContent": "메시지 내용:",
+  "allContactsSmsSuccess": "{count}명에게 SMS를 보냈습니다",
+  "@allContactsSmsSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allContactsSmsFailed": "모든 연락처로 SMS 전송에 실패했습니다",
+  "smsFailedWithError": "SMS 전송 실패: {error}",
+  "@smsFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "editMessage": "메시지 편집",
+  "copy": "복사",
+  "failedToOpenHazardMap": "위험 지도를 열 수 없습니다: {error}",
+  "@failedToOpenHazardMap": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "hazardMapOpened": "위험 지도가 성공적으로 열렸습니다",
+  "hazardMapPortalSite": "위험 지도 포털 사이트",
+  "checkDisasterRiskInfo": "전국 재해 위험 정보 확인",
+  "checkVariousSettings": "각종 설정 등",
+  "checkNationwideDisasterInfo": "전국 재해 정보 확인",
+  "viewHazardMap": "위험 지도 확인",
+  "sendEmergencySMS": "긴급 SMS 전송",
+  "checkSafetyInfo": "안전 정보 확인",
+  "evacuationGuidance": "대피 안내",
+  "emergencyContactInfo": "비상 연락처 정보",
+  "aiResponseDisclaimer": "※ 답변에는 불확실성이 포함될 수 있습니다. 응급 상황에서는 공식 정보원을 확인하세요.",
+  "loadingEmergencyInfo": "긴급 정보를 로딩 중입니다...",
+  "iAmSafe": "저는 안전합니다.",
+  "voiceInputError": "음성 입력 오류: {error}",
+  "@voiceInputError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "recordingSeconds": "녹음 중... {seconds}초",
+  "@recordingSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "sending": "전송 중...",
+  "wifi": "Wi-Fi",
+  "locationPermissionEnabled": "📍 위치 권한이 활성화되었습니다",
+  "locationPermissionRequired": "❌ 위치 권한을 활성화해주세요\n설정 > 앱 > SafeBeee > 위치",
+  "locationDiagnosticPerformed": "🔍 위치 권한 진단이 수행되었습니다\n로그를 확인해주세요",
+  "gpsServiceDisabled": "📱 GPS 서비스가 비활성화되어 있습니다\n설정에서 위치 서비스를 활성화해주세요",
+  "itemCount": "{count} 개",
+  "@itemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loading": "로딩 중...",
+  "location": "위치",
+  "currentLocation": "현재 위치",
+  "latitude": "위도",
+  "longitude": "경도",
+  "accuracy": "정확도",
+  "alertLevel": "경보 단계: {level}",
+  "@alertLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "announcementTime": "발표 시간: {time}",
+  "@announcementTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "shelter": "대피소: {name}",
+  "@shelter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSavingContact": "저장 중 오류 발생: {error}",
+  "@errorSavingContact": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

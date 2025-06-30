@@ -1,0 +1,274 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  e2e_tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.0'
+        channel: 'stable'
+
+    - name: Enable Linux desktop
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Linux dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          clang \
+          cmake \
+          ninja-build \
+          pkg-config \
+          libgtk-3-dev \
+          liblzma-dev \
+          libstdc++-12-dev
+
+    - name: Get Flutter dependencies
+      run: flutter pub get
+
+    - name: Generate code
+      run: flutter packages pub run build_runner build --delete-conflicting-outputs
+
+    - name: Verify Flutter setup
+      run: flutter doctor -v
+
+    - name: Run E2E tests
+      run: |
+        # Start virtual display for headless testing
+        export DISPLAY=:99
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+        
+        # Run tests on Linux desktop
+        flutter test integration_test/ -d linux --coverage
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: e2e-test-results
+        path: |
+          test_results/
+          coverage/
+        retention-days: 30
+
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: e2e-screenshots
+        path: |
+          screenshots/
+          failure_screenshots/
+        retention-days: 7
+
+  mobile_e2e_tests:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        device: ['iPhone 15 Pro', 'iPad Pro (12.9-inch) (6th generation)']
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.0'
+        channel: 'stable'
+
+    - name: List available simulators
+      run: xcrun simctl list devices available
+
+    - name: Start iOS Simulator
+      run: |
+        DEVICE_ID=$(xcrun simctl list devices available | grep "${{ matrix.device }}" | head -1 | grep -o '\[.*\]' | tr -d '[]')
+        echo "Starting simulator: $DEVICE_ID"
+        xcrun simctl boot "$DEVICE_ID"
+        echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
+
+    - name: Get Flutter dependencies
+      run: flutter pub get
+
+    - name: Generate code
+      run: flutter packages pub run build_runner build --delete-conflicting-outputs
+
+    - name: Run E2E tests on iOS
+      run: |
+        flutter test integration_test/ -d $DEVICE_ID --coverage
+      timeout-minutes: 30
+
+    - name: Upload mobile test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: mobile-e2e-results-${{ matrix.device }}
+        path: |
+          test_results/
+          coverage/
+        retention-days: 30
+
+  android_e2e_tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.0'
+        channel: 'stable'
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Enable KVM group permissions
+      run: |
+        echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+        sudo udevadm control --reload-rules
+        sudo udevadm trigger --name-match=kvm
+
+    - name: Create and start Android emulator
+      run: |
+        # Create AVD
+        echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd \
+          -n test_emulator \
+          -k "system-images;android-30;google_apis;x86_64" \
+          --force
+        
+        # Start emulator
+        $ANDROID_HOME/emulator/emulator -avd test_emulator -no-audio -no-window -gpu swiftshader_indirect &
+        
+        # Wait for emulator to be ready
+        $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done'
+
+    - name: Get Flutter dependencies
+      run: flutter pub get
+
+    - name: Generate code
+      run: flutter packages pub run build_runner build --delete-conflicting-outputs
+
+    - name: Run E2E tests on Android
+      run: |
+        flutter test integration_test/ -d emulator-5554 --coverage
+      timeout-minutes: 30
+
+    - name: Upload Android test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: android-e2e-results
+        path: |
+          test_results/
+          coverage/
+        retention-days: 30
+
+  performance_tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.0'
+        channel: 'stable'
+
+    - name: Enable Linux desktop
+      run: flutter config --enable-linux-desktop
+
+    - name: Install Linux dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          clang \
+          cmake \
+          ninja-build \
+          pkg-config \
+          libgtk-3-dev \
+          liblzma-dev
+
+    - name: Get Flutter dependencies
+      run: flutter pub get
+
+    - name: Run performance tests
+      run: |
+        export DISPLAY=:99
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+        
+        # Run specific performance-focused tests
+        flutter test integration_test/smoke_test.dart -d linux --profile
+
+    - name: Upload performance results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: performance-test-results
+        path: test_results/
+        retention-days: 30
+
+  test_summary:
+    runs-on: ubuntu-latest
+    needs: [e2e_tests, mobile_e2e_tests, android_e2e_tests, performance_tests]
+    if: always()
+
+    steps:
+    - name: Download all test results
+      uses: actions/download-artifact@v4
+      with:
+        path: all_results/
+
+    - name: Generate test summary
+      run: |
+        echo "# E2E Test Results Summary" > test_summary.md
+        echo "" >> test_summary.md
+        echo "## Test Status" >> test_summary.md
+        echo "- Desktop Tests: ${{ needs.e2e_tests.result }}" >> test_summary.md
+        echo "- Mobile Tests: ${{ needs.mobile_e2e_tests.result }}" >> test_summary.md
+        echo "- Android Tests: ${{ needs.android_e2e_tests.result }}" >> test_summary.md
+        echo "- Performance Tests: ${{ needs.performance_tests.result }}" >> test_summary.md
+        echo "" >> test_summary.md
+        echo "## Test Artifacts" >> test_summary.md
+        echo "Test results and screenshots are available in the workflow artifacts." >> test_summary.md
+
+    - name: Upload test summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-summary
+        path: test_summary.md
+        retention-days: 30

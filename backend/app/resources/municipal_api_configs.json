@@ -1,0 +1,458 @@
+{
+  "municipal_apis": {
+    "tokyo": {
+      "name": "東京都オープンデータAPI",
+      "base_url": "https://service.api.metro.tokyo.lg.jp",
+      "endpoints": {
+        "shelters": "/api/v1/shelters",
+        "evacuation_sites": "/api/v1/evacuation_sites"
+      },
+      "enabled": true,
+      "rate_limit": 60,
+      "timeout": 10,
+      "data_format": "json",
+      "auth_required": false
+    },
+    "osaka": {
+      "name": "大阪市オープンデータAPI",
+      "base_url": "https://www.city.osaka.lg.jp/api",
+      "endpoints": {
+        "shelters": "/v1/evacuation_facilities",
+        "disaster_prevention": "/v1/disaster_prevention_facilities"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 大阪市のオープンデータポータル連携"
+    },
+    "yokohama": {
+      "name": "横浜市オープンデータAPI",
+      "base_url": "https://www.city.yokohama.lg.jp/api",
+      "endpoints": {
+        "evacuation_sites": "/v1/evacuation",
+        "emergency_shelters": "/v1/emergency_shelters"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 横浜市データポータル連携"
+    },
+    "nagoya": {
+      "name": "名古屋市オープンデータAPI",
+      "base_url": "https://www.city.nagoya.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "evacuation_areas": "/v1/hinanchi"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 名古屋市オープンデータ連携"
+    },
+    "kyoto": {
+      "name": "京都市オープンデータAPI",
+      "base_url": "https://www.city.kyoto.lg.jp/api",
+      "endpoints": {
+        "evacuation_facilities": "/v1/evacuation_facilities",
+        "disaster_prevention": "/v1/disaster_prevention"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 京都市情報館データ連携"
+    },
+    "fukuoka": {
+      "name": "福岡市オープンデータAPI",
+      "base_url": "https://www.city.fukuoka.lg.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "emergency_facilities": "/v1/emergency"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 福岡市オープンデータサイト連携"
+    },
+    "sendai": {
+      "name": "仙台市オープンデータAPI",
+      "base_url": "https://www.city.sendai.jp/api",
+      "endpoints": {
+        "evacuation_sites": "/v1/evacuation",
+        "shelter_info": "/v1/shelters"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 仙台市オープンデータ連携"
+    },
+    "sapporo": {
+      "name": "札幌市オープンデータAPI",
+      "base_url": "https://www.city.sapporo.jp/api",
+      "endpoints": {
+        "evacuation_facilities": "/v1/evacuation",
+        "emergency_shelters": "/v1/emergency_shelters"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 札幌市オープンデータ連携"
+    },
+    "hiroshima": {
+      "name": "広島市オープンデータAPI",
+      "base_url": "https://www.city.hiroshima.lg.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "evacuation_areas": "/v1/evacuation_areas"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 広島市オープンデータ連携"
+    },
+    "kobe": {
+      "name": "神戸市オープンデータAPI",
+      "base_url": "https://www.city.kobe.lg.jp/api",
+      "endpoints": {
+        "evacuation_sites": "/v1/evacuation",
+        "disaster_prevention": "/v1/disaster_prevention"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 神戸市オープンデータポータル連携"
+    },
+    "chiba": {
+      "name": "千葉市オープンデータAPI",
+      "base_url": "https://www.city.chiba.jp/api",
+      "endpoints": {
+        "shelters": "/v1/evacuation_shelters",
+        "evacuation_sites": "/v1/evacuation_sites"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 千葉市オープンデータ連携"
+    },
+    "kawasaki": {
+      "name": "川崎市オープンデータAPI",
+      "base_url": "https://www.city.kawasaki.jp/api",
+      "endpoints": {
+        "evacuation_facilities": "/v1/evacuation",
+        "emergency_shelters": "/v1/emergency"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 川崎市オープンデータ連携"
+    },
+    "kumamoto": {
+      "name": "熊本市オープンデータAPI",
+      "base_url": "https://www.city.kumamoto.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "evacuation_info": "/v1/evacuation"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 熊本市オープンデータ連携"
+    },
+    "okayama": {
+      "name": "岡山市オープンデータAPI",
+      "base_url": "https://www.city.okayama.jp/api",
+      "endpoints": {
+        "evacuation_sites": "/v1/evacuation",
+        "shelter_facilities": "/v1/shelters"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 岡山市オープンデータ連携"
+    },
+    "niigata": {
+      "name": "新潟市オープンデータAPI",
+      "base_url": "https://www.city.niigata.lg.jp/api",
+      "endpoints": {
+        "evacuation_facilities": "/v1/evacuation",
+        "emergency_shelters": "/v1/emergency"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 新潟市オープンデータ連携"
+    },
+    "hamamatsu": {
+      "name": "浜松市オープンデータAPI",
+      "base_url": "https://www.city.hamamatsu.shizuoka.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "evacuation_areas": "/v1/evacuation"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 浜松市オープンデータ連携"
+    },
+    "shizuoka": {
+      "name": "静岡市オープンデータAPI",
+      "base_url": "https://www.city.shizuoka.lg.jp/api",
+      "endpoints": {
+        "evacuation_sites": "/v1/evacuation",
+        "disaster_prevention": "/v1/disaster_prevention"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 静岡市オープンデータ連携"
+    },
+    "sakai": {
+      "name": "堺市オープンデータAPI",
+      "base_url": "https://www.city.sakai.lg.jp/api",
+      "endpoints": {
+        "evacuation_facilities": "/v1/evacuation",
+        "shelter_info": "/v1/shelters"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 堺市オープンデータ連携"
+    },
+    "kitakyushu": {
+      "name": "北九州市オープンデータAPI",
+      "base_url": "https://www.city.kitakyushu.lg.jp/api",
+      "endpoints": {
+        "shelters": "/v1/hinanjo",
+        "evacuation_areas": "/v1/evacuation"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - 北九州市オープンデータ連携"
+    },
+    "prefecture_apis": {
+      "hokkaido": {
+        "name": "北海道オープンデータAPI",
+        "base_url": "https://www.pref.hokkaido.lg.jp/api",
+        "endpoints": {
+          "evacuation_facilities": "/v1/evacuation",
+          "disaster_info": "/v1/disaster"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 北海道庁オープンデータ連携"
+      },
+      "aomori": {
+        "name": "青森県オープンデータAPI",
+        "base_url": "https://www.pref.aomori.lg.jp/api",
+        "endpoints": {
+          "shelters": "/v1/hinanjo",
+          "evacuation_sites": "/v1/evacuation"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 青森県オープンデータ連携"
+      },
+      "iwate": {
+        "name": "岩手県オープンデータAPI",
+        "base_url": "https://www.pref.iwate.jp/api",
+        "endpoints": {
+          "evacuation_facilities": "/v1/evacuation",
+          "emergency_info": "/v1/emergency"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 岩手県オープンデータ連携"
+      },
+      "miyagi": {
+        "name": "宮城県オープンデータAPI",
+        "base_url": "https://www.pref.miyagi.jp/api",
+        "endpoints": {
+          "shelters": "/v1/hinanjo",
+          "disaster_prevention": "/v1/disaster_prevention"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 宮城県オープンデータ連携"
+      },
+      "akita": {
+        "name": "秋田県オープンデータAPI",
+        "base_url": "https://www.pref.akita.lg.jp/api",
+        "endpoints": {
+          "evacuation_sites": "/v1/evacuation",
+          "shelter_info": "/v1/shelters"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 秋田県オープンデータ連携"
+      },
+      "yamagata": {
+        "name": "山形県オープンデータAPI",
+        "base_url": "https://www.pref.yamagata.jp/api",
+        "endpoints": {
+          "evacuation_facilities": "/v1/evacuation",
+          "emergency_shelters": "/v1/emergency"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 山形県オープンデータ連携"
+      },
+      "fukushima": {
+        "name": "福島県オープンデータAPI",
+        "base_url": "https://www.pref.fukushima.lg.jp/api",
+        "endpoints": {
+          "shelters": "/v1/hinanjo",
+          "evacuation_areas": "/v1/evacuation"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 福島県オープンデータ連携"
+      },
+      "okinawa": {
+        "name": "沖縄県オープンデータAPI",
+        "base_url": "https://www.pref.okinawa.jp/api",
+        "endpoints": {
+          "evacuation_sites": "/v1/evacuation",
+          "typhoon_shelters": "/v1/typhoon_shelters"
+        },
+        "enabled": false,
+        "rate_limit": 20,
+        "timeout": 20,
+        "data_format": "json",
+        "auth_required": false,
+        "notes": "実装予定 - 沖縄県オープンデータ連携（台風対応特化）"
+      }
+    }
+  },
+  "gsi_apis": {
+    "elevation": {
+      "name": "国土地理院標高API",
+      "base_url": "https://cyberjapandata2.gsi.go.jp",
+      "endpoints": {
+        "elevation": "/general/dem/scripts/getelevation.php"
+      },
+      "enabled": true,
+      "rate_limit": 60,
+      "timeout": 5,
+      "data_format": "json",
+      "auth_required": false,
+      "parameters": {
+        "outtype": "JSON"
+      }
+    },
+    "hazard_maps": {
+      "name": "国土地理院ハザードマップAPI",
+      "base_url": "https://disaportal.gsi.go.jp",
+      "endpoints": {
+        "flood": "/hazardmap/api/flood",
+        "tsunami": "/hazardmap/api/tsunami",
+        "landslide": "/hazardmap/api/landslide"
+      },
+      "enabled": true,
+      "rate_limit": 30,
+      "timeout": 10,
+      "data_format": "json",
+      "auth_required": false
+    },
+    "shelter_tiles": {
+      "name": "国土地理院避難所タイルAPI",
+      "base_url": "https://maps.gsi.go.jp",
+      "endpoints": {
+        "shelter_geojson": "/xyz/hinanjo/geojson/"
+      },
+      "enabled": true,
+      "rate_limit": 30,
+      "timeout": 10,
+      "data_format": "geojson",
+      "auth_required": false,
+      "notes": "タイル形式の避難所データ（GeoJSON）"
+    }
+  },
+  "special_apis": {
+    "jma": {
+      "name": "気象庁XML配信サービス",
+      "base_url": "http://www.data.jma.go.jp",
+      "endpoints": {
+        "regular_feed": "/developer/xml/feed/regular.xml",
+        "extra_feed": "/developer/xml/feed/extra.xml",
+        "earthquake_feed": "/developer/xml/feed/eqvol.xml"
+      },
+      "enabled": true,
+      "rate_limit": 10,
+      "timeout": 15,
+      "data_format": "xml",
+      "auth_required": false,
+      "notes": "気象警報・地震・津波情報"
+    },
+    "nied": {
+      "name": "防災科学技術研究所API",
+      "base_url": "https://www.bosai.go.jp/api",
+      "endpoints": {
+        "realtime_earthquake": "/v1/earthquake/realtime",
+        "tsunami_forecast": "/v1/tsunami/forecast"
+      },
+      "enabled": false,
+      "rate_limit": 30,
+      "timeout": 15,
+      "data_format": "json",
+      "auth_required": false,
+      "notes": "実装予定 - リアルタイム地震・津波情報"
+    }
+  }
+}

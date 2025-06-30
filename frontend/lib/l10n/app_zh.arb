@@ -1,0 +1,21 @@
+{
+  "@@locale": "zh",
+  "emergencySms": "紧急短信",
+  "sendToAllContacts": "发送给所有人",
+  "selectIndividually": "单独选择",
+  "smsSafetyMessage": "[SafeBeee] 我很安全，现在在安全的地方。",
+  "smsTemplateRecommended": "[SafeBeee] 我很安全，一切都好。",
+  "smsTemplateDetailed": "[SafeBeee] 我很安全，现在在安全的地方。请不要担心我。",
+  "smsTemplateCheckIn": "[SafeBeee] 定期联系。我一切都好。",
+  "smsTemplateRecommendedWithLocation": "[SafeBeee] 我很安全，一切都好。当前位置：{location}",
+  "@smsTemplateRecommendedWithLocation": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "safetyConfirmationSms": "安全确认短信",
+  "send": "发送",
+  "cancel": "取消"
+}

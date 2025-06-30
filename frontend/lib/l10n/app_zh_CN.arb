@@ -1,0 +1,143 @@
+{
+  "@@locale": "zh_CN",
+  "appName": "SafetyBee",
+  "permissionRequiredTitle": "需要权限",
+  "permissionRequestSubtitle": "设置应用基本功能所需的权限",
+  "permissionLaterInfo": "这些权限对安全功能很重要，但也可以稍后设置。",
+  "locationPermissionTitle": "位置权限",
+  "locationPermissionRationale": "本应用使用您的位置信息来通知您附近的避难所和危险区域。",
+  "notificationPermissionTitle": "通知权限",
+  "notificationPermissionRationale": "我们将向您发送有关灾害警报和重要更新的通知。",
+  "next": "下一步",
+  "settings": "设置",
+  "language": "语言",
+  "selectLanguage": "选择语言",
+  "cancel": "取消",
+  "ok": "确定",
+  "settingsLoadFailed": "加载设置失败。请重试。",
+  "notificationSettings": "通知设置",
+  "notificationSettingsDescription": "更改应用通知设置",
+  "messageInputHint": "输入消息...",
+  "emergencyContacts": "紧急联系人",
+  "addEmergencyContact": "添加紧急联系人",
+  "name": "姓名",
+  "phoneNumber": "电话号码",
+  "save": "保存",
+  "delete": "删除",
+  "edit": "编辑",
+  "emergencyContactAdded": "已添加紧急联系人",
+  "pleaseEnterNameAndPhone": "请输入姓名和电话号码",
+  "errorOccurred": "发生错误：{error}",
+  "userNickname": "用户昵称",
+  "notSet": "未设置",
+  "emergencyContactsList": "紧急联系人列表",
+  "noEmergencyContacts": "未设置紧急联系人",
+  "editEmergencyContact": "编辑紧急联系人",
+  "deleteEmergencyContactConfirmation": "确定要删除此紧急联系人吗？",
+  "confirmation": "确认",
+  "reset": "重置",
+  "resetAppToInitialState": "重置应用到初始状态",
+  "resetConfirmationMessage": "这将删除所有数据并重启应用。您确定吗？",
+  "backToHome": "返回主页",
+  "tapForDetails": "点击查看详情",
+  "nickname": "昵称",
+  "nicknameHint": "输入昵称...",
+  "enterNickname": "请输入显示用的昵称",
+  "contactName": "联系人姓名",
+  "contactNameHint": "输入联系人姓名...",
+  "contactPhone": "电话号码",
+  "contactPhoneHint": "输入电话号码...",
+  "addContactPrompt": "您可以注册紧急时要联系的人（可选）",
+  "addContact": "添加联系人",
+  "skip": "跳过",
+  "finish": "完成",
+  "registerEmergencyContact": "注册紧急联系人",
+  "aiResponseDisclaimer": "※ AI 回复可能包含不确定性。紧急情况下请验证官方信息源。",
+  "emergencySms": "紧急短信",
+  "sendToAllContacts": "发送给所有人",
+  "selectIndividually": "单独选择",
+  "smsSafetyMessage": "[SafeBeee] 我很安全，现在在安全的地方。",
+  "smsTemplateRecommended": "[SafeBeee] 我很安全，一切都好。",
+  "smsTemplateDetailed": "[SafeBeee] 我很安全，现在在安全的地方。请不要担心我。",
+  "smsTemplateCheckIn": "[SafeBeee] 定期联系。我一切都好。",
+  "smsTemplateRecommendedWithLocation": "[SafeBeee] 我很安全，一切都好。当前位置：{location}",
+  "@smsTemplateRecommendedWithLocation": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "safetyConfirmationSms": "安全确认短信",
+  "send": "发送",
+  "loadingEmergencyInfo": "正在加载紧急信息...",
+  "iAmSafe": "我很安全。",
+  "voiceInputError": "语音输入错误：{error}",
+  "@voiceInputError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "recordingSeconds": "录音中... {seconds}秒",
+  "@recordingSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "sending": "发送中...",
+  "wifi": "Wi-Fi",
+  "locationPermissionEnabled": "📍 位置权限已启用",
+  "locationPermissionRequired": "❌ 请启用位置权限\n设置 > 应用 > SafeBeee > 位置",
+  "locationDiagnosticPerformed": "🔍 已执行位置权限诊断\n请查看日志",
+  "gpsServiceDisabled": "📱 GPS服务已禁用\n请在设置中启用位置服务",
+  "itemCount": "{count} 项",
+  "@itemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loading": "加载中...",
+  "location": "位置",
+  "currentLocation": "当前位置",
+  "latitude": "纬度",
+  "longitude": "经度",
+  "accuracy": "精度",
+  "alertLevel": "警戒级别：{level}",
+  "@alertLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "announcementTime": "发布时间：{time}",
+  "@announcementTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "shelter": "避难所：{name}",
+  "@shelter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSavingContact": "保存时发生错误：{error}",
+  "@errorSavingContact": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

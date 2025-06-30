@@ -1,0 +1,257 @@
+{
+  "@@locale": "es",
+  "appName": "SafetyBee",
+  "permissionRequiredTitle": "Permiso Requerido",
+  "permissionRequestSubtitle": "Configurar permisos para funciones básicas de la aplicación",
+  "permissionLaterInfo": "Estos permisos son importantes para las funciones de seguridad pero se pueden configurar más tarde.",
+  "locationPermissionTitle": "Permiso de Ubicación",
+  "locationPermissionRationale": "Esta aplicación utiliza su ubicación para notificarle sobre refugios cercanos y zonas de peligro.",
+  "notificationPermissionTitle": "Permiso de Notificaciones",
+  "notificationPermissionRationale": "Le enviaremos notificaciones sobre alertas de desastres y actualizaciones importantes.",
+  "next": "Siguiente",
+  "settings": "Configuración",
+  "language": "Idioma",
+  "selectLanguage": "Seleccionar Idioma",
+  "cancel": "Cancelar",
+  "ok": "OK",
+  "settingsLoadFailed": "Error al cargar la configuración. Por favor, intente de nuevo.",
+  "notificationSettings": "Configuración de Notificaciones",
+  "notificationSettingsDescription": "Cambiar configuración de notificaciones de la aplicación",
+  "messageInputHint": "Escriba un mensaje...",
+  "emergencyContacts": "Contactos de Emergencia",
+  "addEmergencyContact": "Agregar Contacto de Emergencia",
+  "name": "Nombre",
+  "phoneNumber": "Número de Teléfono",
+  "save": "Guardar",
+  "registerEmergencyContact": "Registrar Contacto de Emergencia",
+  "emergencyContactAdded": "Contacto de emergencia agregado",
+  "pleaseEnterNameAndPhone": "Por favor ingrese nombre y número de teléfono",
+  "errorOccurred": "Ocurrió un error: {error}",
+  "tapForDetails": "Toque para ver detalles",
+  "welcome": "Bienvenido",
+  "nickname": "Apodo",
+  "enterNickname": "Por favor ingrese su apodo",
+  "nicknameHint": "Ingrese su apodo...",
+  "emergencyContactSetup": "Configuración de Contactos de Emergencia",
+  "addContactPrompt": "Por favor agregue contactos de emergencia por seguridad.",
+  "contactName": "Nombre del Contacto",
+  "contactNameHint": "Ingrese nombre del contacto...",
+  "contactPhone": "Número de Teléfono",
+  "contactPhoneHint": "Ingrese número de teléfono...",
+  "addContact": "Agregar Contacto",
+  "removeContact": "Eliminar",
+  "completeSetup": "Completar Configuración",
+  "skip": "Saltar",
+  "continueButton": "Continuar",
+  "finish": "Finalizar",
+  "locationPermissionGranted": "Permiso de ubicación concedido",
+  "allowLocationPermission": "Permitir Permiso de Ubicación",
+  "notificationPermissionGranted": "Permiso de notificaciones concedido",
+  "allowNotificationPermission": "Permitir Permiso de Notificaciones",
+  "backToHome": "Volver al Inicio",
+  "notSet": "No configurado",
+  "waitingForResponse": "Esperando respuesta",
+  "tapToConfirm": "Toca para confirmar",
+  "askQuestion": "Hacer pregunta",
+  "emergencyActionRequired": "⚠️ Se requiere acción de emergencia",
+  "evacuationInfo": "🚨 Información de evacuación",
+  "shelterInfo": "🏠 Información de refugio",
+  "emergencyAlert": "🚨 Alerta de emergencia",
+  "safetyConfirmation": "✅ Confirmación de seguridad",
+  "hazardMapInfo": "🗺️ Información del mapa de peligros",
+  "disasterLatestInfo": "📡 Información más reciente sobre desastres",
+  "disasterRelatedInfo": "🌀 Información relacionada con desastres",
+  "questionSent": "Pregunta enviada",
+  "notificationConfirmed": "Notificación confirmada",
+  "loading": "Cargando...",
+  "timelineEmpty": "La línea de tiempo está vacía",
+  "loadingTimeline": "Cargando línea de tiempo...",
+  "gettingLatestInfo": "Obteniendo la información más reciente de SafeBeee",
+  "infoWillAppearSoon": "La información aparecerá pronto. Por favor espera.",
+  "userNickname": "Apodo del Usuario",
+  "emergencyContactsList": "Lista de Contactos de Emergencia",
+  "noEmergencyContacts": "No hay contactos de emergencia registrados",
+  "contacts": "contactos",
+  "contact": "contacto",
+  "resetAppToInitialState": "Restablecer aplicación al estado inicial",
+  "confirmation": "Confirmación",
+  "resetConfirmationMessage": "Toda la configuración y datos serán eliminados y se volverá al estado inicial. ¿Está seguro?",
+  "reset": "Restablecer",
+  "editEmergencyContact": "Editar Contacto de Emergencia",
+  "deleteEmergencyContactConfirmation": "¿Está seguro de que desea eliminar este contacto de emergencia?",
+  "delete": "Eliminar",
+  "gpsEnabled": "GPS Habilitado",
+  "gpsDisabled": "GPS Deshabilitado",
+  "mobile": "Móvil",
+  "ethernet": "Ethernet",
+  "offline": "Sin conexión",
+  "emergencySms": "SMS de emergencia",
+  "sendToAllContacts": "Enviar a todos",
+  "selectIndividually": "Seleccionar individualmente",
+  "smsSafetyMessage": "[SafeBeee] Estoy a salvo y en un lugar seguro.",
+  "smsTemplateRecommended": "[SafeBeee] Estoy bien y a salvo.",
+  "smsTemplateDetailed": "[SafeBeee] Estoy bien y en un lugar seguro. No se preocupen por mí.",
+  "smsTemplateCheckIn": "[SafeBeee] Contacto regular. Me encuentro bien.",
+  "smsTemplateRecommendedWithLocation": "[SafeBeee] Estoy bien y a salvo. Ubicación actual: {location}",
+  "@smsTemplateRecommendedWithLocation": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "smsAppOpened": "Aplicación de SMS abierta",
+  "smsSent": "SMS enviado",
+  "smsFailedToOpen": "No se pudo abrir la aplicación de SMS",
+  "recipientCount": "{count} destinatarios",
+  "@recipientCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openHazardMap": "Abrir mapa de riesgos",
+  "externalSiteWarning": "Se abrirá un sitio externo",
+  "hazardMapUrl": "URL del mapa de riesgos",
+  "openInBrowser": "Abrir en navegador",
+  "close": "Cerrar",
+  "sendComplete": "Envío completo",
+  "smsPrepared": "SMS preparado",
+  "copiedToClipboard": "Copiado al portapapeles",
+  "recipient": "Destinatario",
+  "message": "Mensaje",
+  "smsInstructions": "Instrucciones:",
+  "openSmsApp": "1. Abrir aplicación de SMS",
+  "enterPhoneNumber": "2. Ingrese o seleccione el número de teléfono",
+  "pasteAndSend": "3. Pegue el mensaje y envíe",
+  "smsAppOpenedButton": "Aplicación de SMS abierta",
+  "smsAppOpenedMessage": "Aplicación de SMS abierta para {name} ({phone})",
+  "@smsAppOpenedMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "smsSendInstructions": "Por favor presione el botón 'Envío completo' después de enviar el SMS",
+  "smsManualInstructions": "Instrucciones para enviar SMS manualmente:",
+  "smsCopyButtonInstruction": "1. Presione el botón 'Copiar' para copiar contacto y mensaje",
+  "smsOpenAppInstruction": "2. Abra manualmente la aplicación de SMS",
+  "smsPasteAndSendInstruction": "3. Pegue el número de teléfono y el mensaje, luego envíe",
+  "smsFailedToOpenApp": "No se pudo abrir la aplicación de SMS automáticamente",
+  "errorDetails": "Detalles del error:",
+  "sendTo": "Enviar a:",
+  "messageContent": "Contenido del mensaje:",
+  "allContactsSmsSuccess": "SMS enviado a {count} contactos",
+  "@allContactsSmsSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allContactsSmsFailed": "Error al enviar SMS a todos los contactos",
+  "smsFailedWithError": "Error al enviar SMS: {error}",
+  "@smsFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "editMessage": "Editar mensaje",
+  "copy": "Copiar",
+  "failedToOpenHazardMap": "Error al abrir el mapa de riesgos: {error}",
+  "@failedToOpenHazardMap": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "hazardMapOpened": "Mapa de riesgos abierto exitosamente",
+  "hazardMapPortalSite": "Sitio Portal del Mapa de Riesgos",
+  "checkDisasterRiskInfo": "Verificar información de riesgo de desastres a nivel nacional",
+  "checkVariousSettings": "Varias configuraciones",
+  "checkNationwideDisasterInfo": "Verificar información de desastres a nivel nacional",
+  "viewHazardMap": "Ver mapa de riesgos",
+  "sendEmergencySMS": "Enviar SMS de emergencia",
+  "checkSafetyInfo": "Verificar información de seguridad",
+  "evacuationGuidance": "Guía de evacuación",
+  "emergencyContactInfo": "Información de contactos de emergencia",
+  "aiResponseDisclaimer": "※ Las respuestas de IA pueden contener incertidumbres. Verifique con fuentes oficiales durante emergencias.",
+  "loadingEmergencyInfo": "Cargando información de emergencia...",
+  "iAmSafe": "Estoy a salvo.",
+  "voiceInputError": "Error de entrada de voz: {error}",
+  "@voiceInputError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "recordingSeconds": "Grabando... {seconds} segundos",
+  "@recordingSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "sending": "Enviando...",
+  "wifi": "Wi-Fi",
+  "locationPermissionEnabled": "📍 Permiso de ubicación habilitado",
+  "locationPermissionRequired": "❌ Por favor habilite el permiso de ubicación\nAjustes > Aplicaciones > SafeBeee > Ubicación",
+  "locationDiagnosticPerformed": "🔍 Diagnóstico de permiso de ubicación realizado\nPor favor revise los registros",
+  "gpsServiceDisabled": "📱 El servicio GPS está deshabilitado\nPor favor habilite los servicios de ubicación en ajustes",
+  "itemCount": "{count} elementos",
+  "@itemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loading": "Cargando...",
+  "location": "Ubicación",
+  "currentLocation": "Ubicación actual",
+  "latitude": "Lat",
+  "longitude": "Lng",
+  "accuracy": "Precisión",
+  "alertLevel": "Nivel de alerta: {level}",
+  "@alertLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "announcementTime": "Hora del anuncio: {time}",
+  "@announcementTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "shelter": "Refugio: {name}",
+  "@shelter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSavingContact": "Error al guardar: {error}",
+  "@errorSavingContact": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}

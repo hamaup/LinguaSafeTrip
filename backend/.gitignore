@@ -1,0 +1,288 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-*
+
+# Environment Variables & Config
+.env
+.env.*
+!.env.example
+config.ini
+config.yaml
+config.yml
+
+# API Keys & Credentials (重要な機密情報)
+*key*.json
+*secret*.json
+*credential*.json
+firebase-admin-key.json
+serviceAccountKey.json
+safetybee0424-*.json
+google-credentials.json
+api-keys.json
+
+# Logs & Debug Files
+*.log
+logs/
+!logs/README.md  # Allow logs directory documentation
+debug*.log
+server*.log
+firebase-debug.log
+firestore-debug.log
+*.trace
+trace_*.log
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Cache & Temporary Files
+cache/
+.cache/
+tmp/
+temp/
+/tmp/
+vector_db_faiss/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Test Results & Generated Data
+test_results/
+test-results/
+*test_results*.json
+*test_results*.md
+!tests/manual/*test_results*.json  # Allow manual test results
+continuous_conversation_test_results_*.json
+comprehensive_test_results_*.json
+simple_test_results_*.json
+session_*test_results*.json
+off_topic_fix_validation_*.json
+performance_test_results.json
+cleanup_verification_results.json
+
+# Archive test results
+tests/archive/test_results_*/
+tests/test_results_*/
+*multilingual_test_results*
+*chinese_test*
+*failed_tests*
+
+# Database Files
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+data/
+langgraph_checkpoints.db*
+
+# Debug & Development Scripts
+debug_*.py
+test_*.py
+!tests/test_*.py  # Keep actual test files
+run_*.py
+monitor_*.py
+
+# Documentation Generation Artifacts
+docs/test_results/
+docs/cleanup_verification_results.json
+docs/performance_test_results.json
+docs/*_fix*.py
+docs/shelter_cache_fix.py
+docs/emergency_disaster_info_fix.py
+
+# Documentation Cleanup - Redundant Files
+docs/*test_results*.json
+docs/*test_results*.md
+docs/*_validation_*.json
+docs/*_20250*.json
+docs/*_20250*.md
+docs/emergency_detection_test_summary_*.md
+docs/off_topic_test_summary_*.md
+docs/emotional_support_test_phase*.json
+docs/test_*_proactive_results_*.json
+
+# Documentation - Temporary and Debug Files
+docs/server_emergency_test.log
+docs/test_emergency_output.log
+docs/*.py  # Python scripts in docs should not be tracked
+!docs/testing/**/*.py  # Except for actual test scripts
+
+# LangGraph & AI Model Files
+.langgraph_api/
+.langgraph/
+langgraph_trace_*.log
+/tmp/langgraph_trace_*.log
+/tmp/orchestrator_debug.log
+
+# Graph Visualizations (keep source, ignore generated)
+graph_visualizations/*.png
+graph_visualizations/*.svg
+!graph_visualizations/*.mmd
+
+# Guide Documents (potentially copyrighted)
+guide/*.pdf
+
+# Large Data Files
+*.bin
+*.model
+*.pkl
+*.h5
+*.hdf5
+
+# Jupyter Notebooks Checkpoints
+.ipynb_checkpoints/
+
+# Cloud Functions Build
+cloud_functions/**/*.zip
+cloud_functions/**/node_modules/
+
+# FastAPI
+.pytest_cache/
+.coverage
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Deployment
+deployment/
+terraform/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Monitoring & Metrics
+metrics/
+monitoring/
+
+# Backup Files
+*.bak
+*.backup
+*~
+backup-safetybeacon-backend-staging-*
+
+# Specific Project Files to Ignore
+tests/manual/safetybee0424-*.json
+tests/manual/firebase-debug.log
+tests/manual/firestore-debug.log
+tests/manual/fastapi_debug.log
+tests/manual/langgraph.json
+
+# Development only scripts in root
+debug_sse_flow.py
+debug_suggestions.py
+!tests/manual/test_*.py  # Allow manual test scripts in tests/manual/
+
+# Optimization files (development artifacts)
+Dockerfile.optimized
+*-optimized.*
+startup_optimization.py
+lazy_loader.py
+
+# Mock data for testing
+app/resources/mock_data/
+mock_data/
+
+# Fix and maintenance scripts
+*fix*.py
+find_fix_*.py
+fix_*_errors.py
+watch_and_fix.sh
+*indent*.py
+
+# Project configuration files
+pyproject.toml
+pytest.ini
+
+# Compiled Python files in tests
+tests/**/__pycache__/
+tests/**/*.pyc
+
+# === SafetyBee Specific Ignores ===
+
+# Database Files
+data/
+langgraph_checkpoints.db*
+vector_db_faiss/
+vector_db_simple/
+*.faiss
+*.pkl
+*.npy
+
+# Cache
+cache/
+.cache/
+
+# Graph Visualizations (keep source, ignore generated)
+graph_visualizations/*.png
+graph_visualizations/*.svg
+!graph_visualizations/*.mmd
+
+# PDF Guides
+guide/*.pdf
+
+# Test Results in Root
+*test_result*.json
+*test_summary*.json
+continuous_conversation_test_results_*.json
+session_management_test_results.json
+safety_confirmation_test_result.json
+
+# Development Scripts in Root
+llm_call_tracker.py
+performance_test.py
+cleanup_list.md
+gitignore_additions.md
+
+# Cloud Functions Build
+cloud_functions/**/__pycache__/
+cloud_functions/**/*.pyc
+
+# Temporary and Backup Files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+.~*

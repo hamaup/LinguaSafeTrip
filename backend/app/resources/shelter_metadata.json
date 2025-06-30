@@ -1,0 +1,39 @@
+{
+  "shelters": {
+    "渋谷区総合防災センター": {
+      "floors": 5,
+      "capacity": 500,
+      "is_tsunami_shelter": true,
+      "facilities": ["water", "toilet", "power", "wifi"],
+      "accessibility": ["wheelchair", "elevator"],
+      "pet_allowed": true,
+      "phone": "03-3463-4475",
+      "notes": "24時間対応、屋上ヘリポート有"
+    },
+    "代々木中学校": {
+      "floors": 4,
+      "capacity": 300,
+      "is_tsunami_shelter": true,
+      "facilities": ["water", "toilet", "emergency_supplies"],
+      "accessibility": ["wheelchair", "ramp"],
+      "pet_allowed": false,
+      "phone": "03-3481-0216",
+      "notes": "体育館および教室を開放"
+    },
+    "恵比寿公園": {
+      "floors": 0,
+      "capacity": 200,
+      "is_tsunami_shelter": false,
+      "is_outdoor": true,
+      "seasonal_limitations": {
+        "winter": "寒冷時は屋内避難所を優先検討",
+        "summer": "熱中症リスクあり、日陰・水分確保必要",
+        "rainy_season": "雨天時は使用不可、屋内施設へ"
+      },
+      "facilities": ["water", "temporary_toilet"],
+      "accessibility": ["wheelchair"],
+      "pet_allowed": true,
+      "notes": "屋外避難場所、テント設営可、季節・天候による制限あり"
+    }
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "prefectures": {
+    "130000": {
+      "name": "東京都",
+      "bounds": {
+        "min_lat": 35.5,
+        "max_lat": 35.9,
+        "min_lon": 139.5,
+        "max_lon": 139.9
+      },
+      "cities": {
+        "131010": {
+          "name": "千代田区",
+          "bounds": {
+            "min_lat": 35.670,
+            "max_lat": 35.700,
+            "min_lon": 139.730,
+            "max_lon": 139.770
+          }
+        },
+        "131020": {
+          "name": "中央区",
+          "bounds": {
+            "min_lat": 35.660,
+            "max_lat": 35.690,
+            "min_lon": 139.760,
+            "max_lon": 139.790
+          }
+        },
+        "131030": {
+          "name": "港区",
+          "bounds": {
+            "min_lat": 35.620,
+            "max_lat": 35.680,
+            "min_lon": 139.710,
+            "max_lon": 139.760
+          }
+        },
+        "131040": {
+          "name": "新宿区",
+          "bounds": {
+            "min_lat": 35.670,
+            "max_lat": 35.710,
+            "min_lon": 139.680,
+            "max_lon": 139.730
+          }
+        },
+        "131050": {
+          "name": "文京区",
+          "bounds": {
+            "min_lat": 35.700,
+            "max_lat": 35.730,
+            "min_lon": 139.720,
+            "max_lon": 139.760
+          }
+        },
+        "131060": {
+          "name": "台東区",
+          "bounds": {
+            "min_lat": 35.700,
+            "max_lat": 35.730,
+            "min_lon": 139.760,
+            "max_lon": 139.800
+          }
+        },
+        "131070": {
+          "name": "墨田区",
+          "bounds": {
+            "min_lat": 35.690,
+            "max_lat": 35.730,
+            "min_lon": 139.790,
+            "max_lon": 139.830
+          }
+        },
+        "131080": {
+          "name": "江東区",
+          "bounds": {
+            "min_lat": 35.620,
+            "max_lat": 35.690,
+            "min_lon": 139.790,
+            "max_lon": 139.860
+          }
+        },
+        "131090": {
+          "name": "品川区",
+          "bounds": {
+            "min_lat": 35.590,
+            "max_lat": 35.640,
+            "min_lon": 139.710,
+            "max_lon": 139.760
+          }
+        },
+        "131100": {
+          "name": "目黒区",
+          "bounds": {
+            "min_lat": 35.620,
+            "max_lat": 35.660,
+            "min_lon": 139.660,
+            "max_lon": 139.710
+          }
+        },
+        "131110": {
+          "name": "大田区",
+          "bounds": {
+            "min_lat": 35.540,
+            "max_lat": 35.610,
+            "min_lon": 139.670,
+            "max_lon": 139.760
+          }
+        },
+        "131120": {
+          "name": "世田谷区",
+          "bounds": {
+            "min_lat": 35.620,
+            "max_lat": 35.680,
+            "min_lon": 139.600,
+            "max_lon": 139.670
+          }
+        },
+        "131130": {
+          "name": "渋谷区",
+          "bounds": {
+            "min_lat": 35.640,
+            "max_lat": 35.690,
+            "min_lon": 139.670,
+            "max_lon": 139.720
+          }
+        },
+        "131140": {
+          "name": "中野区",
+          "bounds": {
+            "min_lat": 35.690,
+            "max_lat": 35.730,
+            "min_lon": 139.640,
+            "max_lon": 139.690
+          }
+        },
+        "131150": {
+          "name": "杉並区",
+          "bounds": {
+            "min_lat": 35.680,
+            "max_lat": 35.720,
+            "min_lon": 139.590,
+            "max_lon": 139.650
+          }
+        },
+        "131160": {
+          "name": "豊島区",
+          "bounds": {
+            "min_lat": 35.720,
+            "max_lat": 35.750,
+            "min_lon": 139.690,
+            "max_lon": 139.730
+          }
+        },
+        "131170": {
+          "name": "北区",
+          "bounds": {
+            "min_lat": 35.740,
+            "max_lat": 35.780,
+            "min_lon": 139.720,
+            "max_lon": 139.760
+          }
+        },
+        "131180": {
+          "name": "荒川区",
+          "bounds": {
+            "min_lat": 35.730,
+            "max_lat": 35.750,
+            "min_lon": 139.770,
+            "max_lon": 139.810
+          }
+        },
+        "131190": {
+          "name": "板橋区",
+          "bounds": {
+            "min_lat": 35.740,
+            "max_lat": 35.790,
+            "min_lon": 139.670,
+            "max_lon": 139.720
+          }
+        },
+        "131200": {
+          "name": "練馬区",
+          "bounds": {
+            "min_lat": 35.720,
+            "max_lat": 35.780,
+            "min_lon": 139.590,
+            "max_lon": 139.670
+          }
+        },
+        "131210": {
+          "name": "足立区",
+          "bounds": {
+            "min_lat": 35.750,
+            "max_lat": 35.810,
+            "min_lon": 139.770,
+            "max_lon": 139.830
+          }
+        },
+        "131220": {
+          "name": "葛飾区",
+          "bounds": {
+            "min_lat": 35.720,
+            "max_lat": 35.770,
+            "min_lon": 139.820,
+            "max_lon": 139.880
+          }
+        },
+        "131230": {
+          "name": "江戸川区",
+          "bounds": {
+            "min_lat": 35.660,
+            "max_lat": 35.730,
+            "min_lon": 139.840,
+            "max_lon": 139.900
+          }
+        }
+      }
+    },
+    "140000": {
+      "name": "神奈川県",
+      "bounds": {
+        "min_lat": 35.1,
+        "max_lat": 35.7,
+        "min_lon": 138.9,
+        "max_lon": 139.8
+      },
+      "cities": {
+        "141003": {
+          "name": "横浜市",
+          "bounds": {
+            "min_lat": 35.300,
+            "max_lat": 35.600,
+            "min_lon": 139.450,
+            "max_lon": 139.700
+          }
+        },
+        "141305": {
+          "name": "川崎市",
+          "bounds": {
+            "min_lat": 35.500,
+            "max_lat": 35.650,
+            "min_lon": 139.600,
+            "max_lon": 139.750
+          }
+        }
+      }
+    },
+    "270000": {
+      "name": "大阪府",
+      "bounds": {
+        "min_lat": 34.3,
+        "max_lat": 35.0,
+        "min_lon": 135.0,
+        "max_lon": 135.8
+      },
+      "cities": {
+        "271004": {
+          "name": "大阪市",
+          "bounds": {
+            "min_lat": 34.570,
+            "max_lat": 34.780,
+            "min_lon": 135.380,
+            "max_lon": 135.600
+          }
+        }
+      }
+    }
+  }
+}

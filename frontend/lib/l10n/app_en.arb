@@ -1,0 +1,555 @@
+{
+  "@@locale": "en",
+  "appName": "SafetyBee",
+  "permissionRequiredTitle": "Permission Required",
+  "permissionRequestSubtitle": "Set permissions for basic app functions",
+  "permissionLaterInfo": "These permissions are important for safety features but can be set later.",
+  "locationPermissionTitle": "Location Permission",
+  "locationPermissionRationale": "This app uses your location to notify you about nearby shelters and danger zones.",
+  "notificationPermissionTitle": "Notification Permission",
+  "notificationPermissionRationale": "We will send you notifications about disaster alerts and important updates.",
+  "next": "Next",
+  "settings": "Settings",
+  "language": "Language",
+  "selectLanguage": "Select Language",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "settingsLoadFailed": "Failed to load settings. Please try again.",
+  "notificationSettings": "Notification Settings",
+  "notificationSettingsDescription": "Change app notification settings",
+  "messageInputHint": "Type a message...",
+  "listening": "Listening",
+  "voiceInput": "Voice Input",
+  "voiceInputDescription": "Input messages by voice",
+  "emergencyContacts": "Emergency Contacts",
+  "addEmergencyContact": "Add Emergency Contact",
+  "name": "Name",
+  "phoneNumber": "Phone Number",
+  "save": "Save",
+  "registerEmergencyContact": "Register Emergency Contact",
+  "emergencyContactAdded": "Emergency contact added",
+  "pleaseEnterNameAndPhone": "Please enter name and phone number",
+  "errorOccurred": "An error occurred: {error}",
+  "tapForDetails": "Tap for details",
+  "welcome": "Welcome",
+  "nickname": "Nickname",
+  "enterNickname": "Please enter your nickname",
+  "nicknameHint": "Enter your nickname...",
+  "emergencyContactSetup": "Emergency Contact Setup",
+  "addContactPrompt": "Please add emergency contacts for safety purposes.",
+  "contactName": "Contact Name",
+  "contactNameHint": "Enter contact name...",
+  "contactPhone": "Phone Number",
+  "contactPhoneHint": "Enter phone number...",
+  "addContact": "Add Contact",
+  "removeContact": "Remove",
+  "completeSetup": "Complete Setup",
+  "skip": "Skip",
+  "continueButton": "Continue",
+  "finish": "Finish",
+  "locationPermissionGranted": "Location permission granted",
+  "allowLocationPermission": "Allow Location Permission",
+  "notificationPermissionGranted": "Notification permission granted",
+  "allowNotificationPermission": "Allow Notification Permission",
+  "backToHome": "Back to Home",
+  "notSet": "Not set",
+  "waitingForResponse": "Waiting for response",
+  "tapToConfirm": "Tap to confirm",
+  "askQuestion": "Ask question",
+  "emergencyActionRequired": "⚠️ Emergency action required",
+  "evacuationInfo": "🚨 Evacuation information",
+  "shelterInfo": "🏠 Shelter information",
+  "emergencyAlert": "🚨 Emergency alert",
+  "safetyConfirmation": "✅ Safety confirmation",
+  "hazardMapInfo": "🗺️ Hazard map information",
+  "disasterLatestInfo": "📡 Latest disaster information",
+  "disasterRelatedInfo": "🌀 Disaster-related information",
+  "questionSent": "Question sent",
+  "notificationConfirmed": "Notification confirmed",
+  "loading": "Loading...",
+  "timelineEmpty": "Timeline is empty",
+  "loadingTimeline": "Loading timeline...",
+  "gettingLatestInfo": "Getting latest SafeBeee information",
+  "infoWillAppearSoon": "Information will appear soon. Please wait.",
+  "userNickname": "User Nickname",
+  "emergencyContactsList": "Emergency Contacts List",
+  "noEmergencyContacts": "No emergency contacts registered",
+  "contacts": "contacts",
+  "contact": "contact",
+  "resetAppToInitialState": "Reset app to initial state",
+  "confirmation": "Confirmation",
+  "resetConfirmationMessage": "All settings and data will be deleted and returned to initial state. Are you sure?",
+  "reset": "Reset",
+  "editEmergencyContact": "Edit Emergency Contact",
+  "deleteEmergencyContactConfirmation": "Are you sure you want to delete this emergency contact?",
+  "delete": "Delete",
+  "gpsEnabled": "GPS Enabled",
+  "gpsDisabled": "GPS Disabled",
+  "gpsPermissionDenied": "Permission Denied",
+  "mobile": "Mobile",
+  "ethernet": "Ethernet",
+  "offline": "Offline",
+  "emergencySms": "Emergency SMS",
+  "sendToAllContacts": "Send to All",
+  "selectIndividually": "Select Individually",
+  "smsSafetyMessage": "[SafeBeee] I am safe and in a secure location.",
+  "smsTemplateRecommended": "[SafeBeee] I am safe and secure.",
+  "smsTemplateDetailed": "[SafeBeee] I am safe and in a secure location. Please don't worry about me.",
+  "smsTemplateCheckIn": "[SafeBeee] Regular check-in. I am doing well.",
+  "smsTemplateRecommendedWithLocation": "[SafeBeee] I am safe and secure. Current location: {location}",
+  "@smsTemplateRecommendedWithLocation": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "smsAppOpened": "SMS app opened",
+  "smsSent": "SMS sent",
+  "smsFailedToOpen": "Failed to open SMS app",
+  "recipientCount": "{count} recipients",
+  "@recipientCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openHazardMap": "Open Hazard Map",
+  "externalSiteWarning": "External site will open",
+  "hazardMapUrl": "Hazard Map URL",
+  "openInBrowser": "Open in Browser",
+  "close": "Close",
+  "sendComplete": "Send Complete",
+  "smsPrepared": "SMS Prepared",
+  "copiedToClipboard": "Copied to clipboard",
+  "recipient": "Recipient",
+  "message": "Message",
+  "smsInstructions": "Instructions:",
+  "openSmsApp": "1. Open SMS app",
+  "enterPhoneNumber": "2. Enter or select phone number",
+  "pasteAndSend": "3. Paste message and send",
+  "smsAppOpenedButton": "SMS app opened",
+  "smsAppOpenedMessage": "SMS app opened for {name} ({phone})",
+  "@smsAppOpenedMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "smsSendInstructions": "Please press 'Send Complete' button after sending the SMS",
+  "smsManualInstructions": "Manual SMS sending instructions:",
+  "smsCopyButtonInstruction": "1. Press 'Copy' button to copy contact and message",
+  "smsOpenAppInstruction": "2. Manually open SMS app",
+  "smsPasteAndSendInstruction": "3. Paste phone number and message, then send",
+  "smsFailedToOpenApp": "Failed to open SMS app automatically",
+  "errorDetails": "Error details:",
+  "sendTo": "Send to:",
+  "messageContent": "Message content:",
+  "allContactsSmsSuccess": "SMS sent to {count} contacts",
+  "@allContactsSmsSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allContactsSmsFailed": "Failed to send SMS to all contacts",
+  "smsFailedWithError": "Failed to send SMS: {error}",
+  "@smsFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "editMessage": "Edit message",
+  "copy": "Copy",
+  "failedToOpenHazardMap": "Failed to open hazard map: {error}",
+  "@failedToOpenHazardMap": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "hazardMapOpened": "Hazard map opened successfully",
+  "hazardMapPortalSite": "Hazard Map Portal Site",
+  "checkDisasterRiskInfo": "Check nationwide disaster risk information",
+  "checkVariousSettings": "Various settings",
+  "add": "Add",
+  "edit": "Edit",
+  "loadingSettings": "Loading settings...",
+  "errorOccurred": "An error occurred",
+  "heartbeatInterval": "Heartbeat Interval",
+  "normalTime": "Normal time",
+  "disasterTime": "Disaster time",
+  "minutes": "minutes",
+  "seconds": "seconds",
+  "debugFeatures": "Debug Features",
+  "currentSystemStatus": "Current System Status",
+  "operationMode": "Operation Mode",
+  "emergencyMode": "Emergency Mode",
+  "normalMode": "Normal Mode",
+  "connectionStatus": "Connection Status",
+  "locationStatus": "Location Status",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "battery": "Battery",
+  "charging": "Charging",
+  "emergencyModeActive": "Emergency mode active: Heartbeat interval shortened",
+  "testAlert": "Test Alert",
+  "switchToNormalMode": "Switch to Normal Mode",
+  "switchToEmergencyMode": "Switch to Emergency Mode",
+  "emergencyModeToggle": "Emergency Mode Toggle",
+  "showSuggestionHistory": "Show Suggestion History",
+  "completeReset": "Complete Reset (Debug Only)",
+  "completeResetWarning": "All data, settings, history, contacts, and Firebase will be completely deleted",
+  "showIntervalSettings": "Show Interval Settings",
+  "debugNote": "Debug features are only visible when TEST_MODE=true in .env",
+  "suggestionHistory": "Suggestion History (Debug)",
+  "currentTypeBasedHistory": "Current Type-based History",
+  "typeBasedHistoryEmpty": "No type-based history",
+  "legacyIdBasedHistory": "Legacy ID-based History",
+  "idBasedHistoryEmpty": "No ID-based history",
+  "andMore": "and {count} more",
+  "@andMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "debugInfo": "Debug Information",
+  "historyNote": "・ Type-based is the current history management method\n・ ID-based is the old method (deprecated)\n・ Clear history if suggestions are not displayed",
+  "selectTestAlertType": "Select Test Alert Type",
+  "earthquake": "Earthquake",
+  "earthquakeTest": "Emergency Earthquake Alert Test",
+  "tsunami": "Tsunami",
+  "tsunamiTest": "Tsunami Warning Test",
+  "heavyRain": "Heavy Rain",
+  "heavyRainTest": "Heavy Rain Special Warning Test",
+  "fire": "Fire",
+  "fireTest": "Fire Warning Test",
+  "forceResetEmergency": "Force Emergency Mode Reset",
+  "forceResetEmergencyDesc": "Forcefully reset emergency mode (debug only)",
+  "forceResetConfirm": "Force Emergency Mode Reset",
+  "forceResetMessage": "Are you sure you want to forcefully reset emergency mode?\n\n※This operation is valid for 5 minutes and should only be used for debugging purposes.",
+  "performReset": "Reset",
+  "resettingEmergencyMode": "Resetting emergency mode...",
+  "emergencyModeResetSuccess": "Emergency mode reset successful",
+  "emergencyModeResetFailed": "Failed to reset emergency mode",
+  "triggeringAlert": "Triggering alert...",
+  "alertTriggerSuccess": "Alert triggered successfully!\n{message}",
+  "@alertTriggerSuccess": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "alertTriggerFailed": "Failed to trigger alert: {error}",
+  "@alertTriggerFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "debugAlertTest": "Debug Alert (Test)",
+  "debugAlertDescription": "This is a test alert triggered from debug features.",
+  "emergencyModeToggleConfirm": "Emergency Mode Toggle",
+  "emergencyModeToggleMessage": "Execute debug emergency mode toggle?\n\n・normal → emergency: Enable emergency mode\n・emergency → normal: Disable emergency mode\n\n※Heartbeat interval will be automatically adjusted",
+  "performToggle": "Toggle",
+  "switchedToEmergencyMode": "Switched to emergency mode",
+  "switchedToNormalMode": "Switched to normal mode",
+  "emergencyModeToggleFailed": "Failed to toggle emergency mode: {error}",
+  "@emergencyModeToggleFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "completeAppReset": "Complete App Reset",
+  "completeResetConfirm": "Complete Debug Reset",
+  "completeResetConfirmMessage": "Execute complete debug reset?",
+  "deleteTargets": "Delete Targets (Irreversible):",
+  "deleteTargetsList": "🗑️ All local settings and history\n🗑️ Firebase data (complete deletion)\n🗑️ Suggestion history (frontend and backend)\n🗑️ Disaster mode and emergency mode status\n🗑️ Emergency contacts\n🗑️ Chat history and timeline\n\n⚠️ Debug-only feature",
+  "performCompleteReset": "Complete Reset",
+  "executingCompleteReset": "Executing complete reset...",
+  "initializingData": "Initializing Firebase, local data, timeline history, and disaster mode",
+  "completeResetSuccess": "Complete reset successful. Moving to onboarding...",
+  "completeResetFailed": "Complete reset failed: {error}",
+  "@completeResetFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "systemIntervalSettings": "System Interval Settings",
+  "currentMode": "Current Mode",
+  "disasterMonitoringInterval": "Disaster Monitoring Interval",
+  "disasterMonitoringExplanation": "Disaster Monitoring Interval?",
+  "disasterMonitoringDescription": "Frequency of retrieving disaster information from JMA (Japan Meteorological Agency) and other sources.\nAutomatically checks for earthquakes, tsunamis, heavy rain, and other disasters,\nand notifies users in affected areas when new disasters are detected.",
+  "testModeSettings": "Test Mode Settings",
+  "normalModeSettings": "Normal Mode Settings",
+  "emergencyModeSettings": "Emergency Mode Settings",
+  "intervalDescriptions": "Interval Descriptions:",
+  "disasterMonitoring": "Disaster Monitoring",
+  "newsCollection": "News Collection",
+  "periodicDataCollection": "Periodic Data Collection",
+  "heartbeat": "Heartbeat",
+  "criticalAlert": "Critical Alert",
+  "suggestionCooldown": "Suggestion Cooldown",
+  "heartbeatIntervalSettings": "Heartbeat Interval Settings",
+  "heartbeatIntervalDescription": "Set the interval for sending device status to the server.\nShorter intervals consume more battery.",
+  "normalTimeLabel": "Normal time:",
+  "disasterTimeLabel": "Disaster time:",
+  "heartbeatNote": "※ Automatically switches to shorter interval during disasters",
+  "heartbeatIntervalUpdated": "Heartbeat interval updated",
+  "settingsSaveFailed": "Failed to save settings: {error}",
+  "@settingsSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "fetchingIntervalConfig": "Fetching interval configuration...",
+  "intervalConfigFetchFailed": "Failed to fetch interval configuration: {error}",
+  "@intervalConfigFetchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyEarthquakeAlertTest": "🚨 Emergency Earthquake Alert (Test)",
+  "tsunamiWarningTest": "🌊 Tsunami Warning (Test)",
+  "heavyRainSpecialWarningTest": "🌧️ Heavy Rain Special Warning (Test)",
+  "fireWarningTest": "🔥 Fire Warning (Test)",
+  "emergencyAlertTest": "🚨 Emergency Alert (Test)",
+  "earthquakeAlertTestDescription": "This is a test emergency earthquake alert. Be prepared for strong shaking. (Test)",
+  "tsunamiAlertTestDescription": "This is a test tsunami warning. Evacuate to higher ground. (Test)",
+  "heavyRainAlertTestDescription": "This is a test heavy rain special warning. Take life-saving actions. (Test)",
+  "fireAlertTestDescription": "This is a test fire warning. Evacuate immediately. (Test)",
+  "debugAlertTestDescription": "This is a test alert triggered from debug features.",
+  "checkNationwideDisasterInfo": "Check nationwide disaster information",
+  "viewHazardMap": "View hazard map",
+  "sendEmergencySMS": "Send emergency SMS",
+  "checkSafetyInfo": "Check safety information",
+  "evacuationGuidance": "Evacuation guidance",
+  "emergencyContactInfo": "Emergency contact information",
+  "smsSelectedSentSuccess": "SMS sent successfully to {successCount} out of {totalCount} selected contacts",
+  "@smsSelectedSentSuccess": {
+    "placeholders": {
+      "successCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
+  "selectedContactsSmsFailed": "Failed to send SMS to selected contacts",
+  "sendSafetyConfirmationMessage": "Send safety confirmation message",
+  "sendMessage": "Message to send",
+  "individualSmsMode": "Individual SMS Mode",
+  "editMessage": "Edit Message",
+  "enterMessage": "Enter your message",
+  "selectRecipients": "Select Recipients",
+  "selectAll": "Select All",
+  "deselectAll": "Deselect All",
+  "sendToSelected": "Send to {count} selected",
+  "@sendToSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "emergencyDefaultOverview": "An emergency situation has occurred. Stay calm, assess the situation, and take appropriate safety actions. Pay attention to the latest information and prepare for evacuation if necessary.",
+  "earthquakeOverview": "Strong earthquake activity detected. Take cover under a sturdy desk or table. Stay away from falling objects and prepare for potential aftershocks.",
+  "tsunamiOverview": "Tsunami warning has been issued. Evacuate to higher ground immediately. Do not approach the coast and follow evacuation instructions.",
+  "fireOverview": "Fire alert has been detected. Evacuate the building immediately using stairs, not elevators. Stay low to avoid smoke inhalation.",
+  "typhoonOverview": "Typhoon is approaching. Stay indoors, secure windows, and avoid flooded areas. Prepare for power outages and water service disruptions.",
+  "floodOverview": "Flood warning is in effect. Move to higher ground immediately. Avoid walking or driving through flood water. Monitor emergency broadcasts.",
+  "volcanicOverview": "Volcanic activity has increased. Beware of volcanic ash and projectiles. Stay away from designated evacuation zones and cover nose and mouth.",
+  "landslideOverview": "Landslide risk has increased. Stay away from mountainous areas and steep slopes. Watch for warning signs like springs and ground rumbling.",
+  "tornadoOverview": "Tornado activity detected. Take shelter in a sturdy building away from windows. If outdoors, lie flat in a low area and protect yourself from flying debris.",
+  "earthquakeActions": "1. Ensure personal safety first\n2. Take cover under desk or table\n3. Extinguish fires and secure escape routes\n4. Gather accurate information",
+  "tsunamiActions": "1. Evacuate to higher ground immediately\n2. Avoid vehicle evacuation\n3. Stay away from coast until warning is lifted\n4. Follow evacuation orders",
+  "fireActions": "1. Stay low to avoid smoke\n2. Secure exit and evacuate quickly\n3. Do not use elevators\n4. Call emergency services",
+  "typhoonActions": "1. Stay indoors\n2. Reinforce windows\n3. Early evacuation from flood-prone areas\n4. Prepare for power and water outages",
+  "defaultEmergencyActions": "1. Stay calm and assess situation\n2. Move to safe location\n3. Gather accurate information\n4. Prepare for evacuation",
+  "emergencyActions": "Emergency Actions",
+  "emergencyContactSetupSubtitle": "Register people to contact during disasters",
+  "permissionRequestSubtitle": "Enable app functions",
+  "nicknameSetupSubtitle": "Set your display name",
+  "nearbyShelters": "Nearby Shelters",
+  "shelterCount": "{count} shelters",
+  "@shelterCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "safetySmsDefaultMessage": "I am safe. Location: {location}",
+  "@safetySmsDefaultMessage": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyContactRequiredTitle": "Emergency Contacts Required",
+  "emergencyContactRequiredMessage": "Please register emergency contacts first.",
+  "selectContacts": "Select Contacts",
+  "send": "Send",
+  "smsSentSuccessfully": "SMS sent successfully",
+  "smsFailedToSend": "Failed to send SMS",
+  "sendSafetySms": "Send Safety SMS",
+  "step1SelectRecipients": "Step 1: Select Recipients",
+  "step2EditMessage": "Step 2: Edit Message",
+  "selectTemplate": "Select Template",
+  "editSmsMessage": "Edit SMS Message",
+  "sendToAllContacts": "Send to all contacts ({count})",
+  "@sendToAllContacts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aiResponseDisclaimer": "※ AI responses may contain uncertainties. Please verify with official sources during emergencies.",
+  "currentLocation": "Current Location",
+  "selectAtLeastOneContact": "Please select at least one contact",
+  "messageCannotBeEmpty": "Message cannot be empty",
+  "includeLocation": "Include Location",
+  "contactsSelected": "contacts selected",
+  "recommended": "Recommended",
+  "detailed": "Detailed",
+  "checkIn": "Check In",
+  "selectRecipients": "Select Recipients",
+  "selectTemplate": "Select Template",
+  "message": "Message",
+  "editSmsMessage": "Edit your SMS message...",
+  "selectAll": "Select All",
+  "deselectAll": "Deselect All",
+  "smsSent": "SMS Sent",
+  "smsPartialSuccess": "Partially Sent",
+  "smsFailed": "Failed to Send",
+  "successCount": "{count} messages sent successfully",
+  "@successCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "failedCount": "{count} messages failed to send",
+  "@failedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openSmsApp": "Open SMS App",
+  "suggestionDeleted": "Suggestion deleted",
+  "hazardMapUrlNotFound": "Hazard map URL not found",
+  "to": "To",
+  "safetyConfirmationSms": "Safety Confirmation SMS",
+  "enterMessage": "Enter message",
+  "confirmSendSms": "Confirm SMS Send",
+  "smsContentPreview": "SMS Content Preview",
+  "greeting": "Hello",
+  "editMessage": "Edit Message",
+  "sendToAll": "Send to All",
+  "sendToSelected": "Send to {count} selected",
+  "@sendToSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectIndividually": "Select Individually",
+  "loadingEmergencyInfo": "Loading emergency information...",
+  "iAmSafe": "I am safe.",
+  "voiceInputError": "Voice input error: {error}",
+  "@voiceInputError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "recordingSeconds": "Recording... {seconds} seconds",
+  "@recordingSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "sending": "Sending...",
+  "wifi": "Wi-Fi",
+  "locationPermissionEnabled": "📍 Location permission has been enabled",
+  "locationPermissionRequired": "❌ Please enable location permission\nSettings > Apps > SafeBeee > Location",
+  "locationDiagnosticPerformed": "🔍 Location permission diagnostic performed\nPlease check the logs",
+  "gpsServiceDisabled": "📱 GPS service is disabled\nPlease enable location services in settings",
+  "itemCount": "{count} items",
+  "@itemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loading": "Loading...",
+  "location": "Location",
+  "currentLocation": "Current Location",
+  "latitude": "Lat",
+  "longitude": "Lng",
+  "accuracy": "Accuracy",
+  "alertLevel": "Alert Level: {level}",
+  "@alertLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "announcementTime": "Announcement Time: {time}",
+  "@announcementTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "shelter": "Shelter: {name}",
+  "@shelter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSavingContact": "Error occurred while saving: {error}",
+  "@errorSavingContact": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}
