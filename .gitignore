@@ -570,4 +570,6 @@ backend/config
 
 backend/.dockerignore
 backend/.gcloudignore
+backend/README.md.secrets.baseline
 backend/README.md
+.secrets.baseline
